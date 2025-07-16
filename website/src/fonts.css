@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+@font-face {
+  font-family: 'HelveticaLocal';
+  src: url('/Users/jaypatel/my-app/public/Helvetica-01.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body, .App {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.landing-text h1 {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.landing-text h2 {
+  font-family: 'HelveticaLocal', 'Quicksand', sans-serif;
+}
