@@ -1,0 +1,83 @@
+Input: Directed graph G = (V, E), probabilities p_uv on edges, source node s, target node t
+
+1. For each vertex v in V:
+       distance[v] = ∞
+       predecessor[v] = null
+
+2. distance[s] = 0
+
+3. Initialize priority queue Q = [(0, s)]
+
+4. While Q is not empty:
+      (curr_dist, u) = Q.pop()
+      For each neighbor v of u:
+          p = probability of edge (u, v)
+          weight = -log(p)
+          If distance[u] + weight < distance[v]:
+              distance[v] = distance[u] + weight
+              predecessor[v] = u
+              Q.push((distance[v], v))
+
+5. If distance[t] == ∞:
+      return "No path exists"
+   Else:
+      Reconstruct path from s to t using predecessor array
+      Return the path and final probability = exp(-distance[t])
+
+Question 4
+
+Input: Adjacency matrix G[0..n-1][0..n-1]
+
+1. Initialize:
+      degree = [0] * n
+      sting = tail = body = None
+
+2. For each vertex v from 0 to n-1:
+      degree[v] = sum(G[v][i] for i in 0 to n-1)
+
+3. Find candidates:
+      sting = vertex with degree 1
+      tail  = vertex with degree 2
+      body  = vertex with degree (n - 2)
+
+   If multiple or missing candidates exist, return False
+
+4. Check sting is connected only to tail:
+      If G[sting][tail] != 1 or G[tail][sting] != 1:
+           return False
+      If sum(G[sting]) != 1:
+           return False
+
+5. Check tail is connected only to sting and body:
+      If not (G[tail][sting] == 1 and G[tail][body] == 1):
+           return False
+
+6. Check body is connected to all vertices except sting:
+      For v in 0 to n-1:
+           If v != sting and v != body and G[body][v] != 1:
+               return False
+
+7. Return True
+
+Question 1
+
+Input: grid[0..n-1][0..n-1]
+
+1. Initialize:
+     visited[n][n] = all False
+     queue = empty queue
+     enqueue (0, 0, 0) // (row, col, steps)
+     visited[0][0] = True
+
+2. While queue not empty:
+     (x, y, steps) = dequeue
+     If (x, y) == (n-1, n-1):
+         return steps
+     k = grid[x][y]
+     For each direction (dx, dy) in [(k,0), (-k,0), (0,k), (0,-k)]:
+         nx = x + dx, ny = y + dy
+         If (nx, ny) is within bounds and not visited:
+             enqueue (nx, ny, steps + 1)
+             visited[nx][ny] = True
+
+3. If destination not reached, return -1
