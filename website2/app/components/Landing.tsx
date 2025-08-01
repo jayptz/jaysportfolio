@@ -1,13 +1,23 @@
 'use client'
-
+import { useMemo } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 
 export default function Landing() {
+  const pandaGif = useMemo(() => {
+    const gifs = [
+      '/panda.gif',
+      '/panda2.gif',
+      '/panda3.gif',
+      '/panda4.gif',
+      '/panda5.gif',
+    ]
+    const index = Math.floor(Math.random() * gifs.length)
+    return gifs[index]
+  }, [])
   return (
     <main className="relative min-h-screen bg-green-50 flex flex-col items-center justify-center overflow-hidden">
-      {/* Background bamboo stalks */}
       <div className="absolute inset-0 flex justify-around opacity-20 -z-10">
         {[...Array(7)].map((_, i) => (
           <div
@@ -18,22 +28,19 @@ export default function Landing() {
         ))}
       </div>
 
-      {/* Animated Panda GIF */}
       <motion.img
-        src="/panda.gif" // Make sure this file is in /public
-        alt="Cute Animated Panda"
+        src={pandaGif}
+        alt="Random Animated Panda"
         className="w-40 h-auto mx-auto drop-shadow-xl"
         initial={{ y: 0 }}
         animate={{ y: [0, -10, 0] }}
         transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
       />
 
-      {/* Greeting */}
       <h1 className="mt-6 text-3xl font-bold text-green-900 z-10">
         Welcome to Jay’s World
       </h1>
 
-      {/* Navigation Buttons */}
       <div className="absolute bottom-12 flex gap-6 z-10 flex-wrap justify-center">
         {[
           { label: 'Projects', href: '#projects' },
