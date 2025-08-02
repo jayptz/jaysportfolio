@@ -1,7 +1,7 @@
 "use client";
 
 import createGlobe, { COBEOptions } from "cobe";
-import { useMotionValue, useSpring } from "motion/react";
+import { useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 import { cn } from "@/lib/utils";
@@ -19,9 +19,9 @@ const GLOBE_CONFIG: COBEOptions = {
   diffuse: 0.4,
   mapSamples: 16000,
   mapBrightness: 1.2,
-  baseColor: [1, 1, 1],
-  markerColor: [251 / 255, 100 / 255, 21 / 255],
-  glowColor: [1, 1, 1],
+  baseColor: [0.8, 0.9, 0.8],
+  markerColor: [0.2, 0.6, 0.2],
+  glowColor: [0.6, 0.8, 0.6],
   markers: [
     { location: [14.5995, 120.9842], size: 0.03 },
     { location: [19.076, 72.8777], size: 0.1 },
@@ -93,7 +93,11 @@ export function Globe({
       },
     });
 
-    setTimeout(() => (canvasRef.current!.style.opacity = "1"), 0);
+    setTimeout(() => {
+      if (canvasRef.current) {
+        canvasRef.current.style.opacity = "1";
+      }
+    }, 100);
     return () => {
       globe.destroy();
       window.removeEventListener("resize", onResize);
