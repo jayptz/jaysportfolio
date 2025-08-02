@@ -2,30 +2,30 @@ import Link from 'next/link'
 
 export default function ExperiencePage() {
   return (
-    <main className="relative min-h-screen bg-green-50 flex flex-col items-center justify-center overflow-hidden">
+    <main className="relative min-h-screen bg-black flex flex-col items-center justify-center overflow-hidden">
       <div className="absolute inset-0 flex justify-around opacity-20 -z-10">
         {[...Array(7)].map((_, i) => (
           <div
             key={i}
-            className="w-1 bg-green-800 rounded-lg h-full animate-pulse"
+            className="w-1 bg-white rounded-lg h-full animate-pulse"
             style={{ animationDelay: `${i * 0.2}s` }}
           />
         ))}
       </div>
 
       <div className="text-center z-10">
-        <h1 className="text-5xl font-extrabold text-green-900 mb-8">
-          Experience Page
+        <h1 className="text-5xl font-extrabold text-white mb-8">
+          Journey so far
         </h1>
-        <p className="text-xl text-green-700 mb-8 max-w-2xl">
-          Discover my professional journey and the valuable experiences that shaped my career.
+        <p className="text-xl text-gray-300 mb-8 max-w-2xl">
+          every stalk has roots. here's a glimpse of my Journey so far. Places i've learned, built, and grown. 🌱🐼
         </p>
         
         <Link 
           href="/"
-          className="px-6 py-3 rounded-full border border-green-400 bg-green-100 text-green-900 hover:bg-green-200 transition font-semibold"
+          className="px-6 py-3 rounded-full border border-white bg-black text-white hover:bg-white hover:text-black transition font-semibold"
         >
-          ← Back to Home
+          ← back to panda
         </Link>
       </div>
     </main>

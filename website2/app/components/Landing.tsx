@@ -110,7 +110,7 @@ export default function Landing() {
             transition={{ duration: 1 }}
           >
             <h1 className="mb- text-3xl font-bold text-white z-10">
-              Welcome to Jay's World
+              welcome to Jay's world
             </h1>
             <motion.img
               src={pandaGif}
@@ -128,9 +128,9 @@ export default function Landing() {
           <div className="absolute bottom-0 left-0 right-0 flex gap-6 z-10 flex-wrap justify-center w-full pb-8">
             {[
               { label: 'Projects', href: '/projects' },
-              { label: 'Experience', href: '/experience' },
-              { label: 'School', href: '/school' },
-              { label: 'Contact Me', href: '/contact' },
+              { label: 'experience', href: '/experience' },
+              { label: 'school', href: '/school' },
+              { label: 'contact me', href: '/contact' },
             ].map((item, idx) => (
               <motion.div key={idx} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
                 <Link
