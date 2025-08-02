@@ -8,6 +8,7 @@ import { Globe } from "@/components/magicui/globe";
 
 export default function Landing() {
   const [introStep, setIntroStep] = useState<'hi' | 'welcome' | 'main'>('hi')
+  const [shouldShowIntro, setShouldShowIntro] = useState(true)
   const pandaGif = useMemo(() => {
     const gifs = [
       '/panda.gif',
@@ -20,6 +21,22 @@ export default function Landing() {
     return gifs[index]
   }, [])
   useEffect(() => {
+    // Check if intro has been seen in this session (client-side only)
+    const hasSeenIntro = typeof window !== 'undefined' && sessionStorage.getItem('introSeen') === 'true'
+    
+    if (hasSeenIntro) {
+      // Skip intro, go directly to main content
+      setShouldShowIntro(false)
+      setIntroStep('main')
+      return
+    }
+
+    // First time visit - mark as seen and run intro sequence
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('introSeen', 'true')
+    }
+    
+    setShouldShowIntro(true)
     const hiTimer = setTimeout(() => setIntroStep('welcome'), 2500) 
     const welcomeTimer = setTimeout(() => setIntroStep('main'), 7500) 
 
@@ -43,7 +60,7 @@ export default function Landing() {
       </div>
 
       <AnimatePresence mode="wait">
-        {introStep === 'hi' && (
+        {shouldShowIntro && introStep === 'hi' && (
           <motion.div
             key="hi"
             className="text-center"
@@ -56,7 +73,7 @@ export default function Landing() {
           </motion.div>
         )}
 
-        {introStep === 'welcome' && (
+        {shouldShowIntro && introStep === 'welcome' && (
           <motion.div
             key="welcome"
             className="relative text-center"
@@ -105,10 +122,10 @@ export default function Landing() {
             />
             <div className=" bottom-0 flex gap-6 z-10 flex-wrap justify-center w-full pb-4">
               {[
-                { label: 'Projects', href: '#projects' },
-                { label: 'Experience', href: '#experience' },
-                { label: 'School', href: '#school' },
-                { label: 'Contact Me', href: '#contact' },
+                { label: 'Projects', href: '/projects' },
+                { label: 'Experience', href: '/experience' },
+                { label: 'School', href: '/school' },
+                { label: 'Contact Me', href: '/contact' },
               ].map((item, idx) => (
                 <motion.div key={idx} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
                   <Link
