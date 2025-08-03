@@ -16,13 +16,13 @@ export default function PandaDock() {
     <div className="fixed bottom-6 inset-x-0 z-50 flex justify-center">
       <Dock className="bg-black/20 border-white/20" iconSize={200} iconMagnification={85}>
       <DockIcon>
-          <Link href="/contact" className="text-white text-base font-medium">
+          <Link href="/projects" className="text-white text-base font-medium">
             ProJects
           </Link>
         </DockIcon>
         
         <DockIcon>
-          <Link href="/contact" className="text-white text-base font-medium">
+          <Link href="/about" className="text-white text-base font-medium">
             about me
           </Link>
         </DockIcon>
