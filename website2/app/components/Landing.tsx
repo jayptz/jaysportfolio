@@ -3,6 +3,8 @@ import { motion, AnimatePresence} from 'framer-motion'
 import Link from 'next/link'
 import { useEffect, useState, useMemo } from 'react'
 import { Globe } from "@/components/magicui/globe";
+import PandaDock from './PandaDock'
+import SolarSystem from './SolarSystem'
 
 
 
@@ -49,6 +51,12 @@ export default function Landing() {
 
   return (
     <main className="relative min-h-screen bg-black flex items-center justify-center overflow-hidden">
+      {/* Solar System Background - Always visible */}
+      <div className="absolute inset-0 -z-20" style={{ border: '2px solid blue', backgroundColor: 'rgba(0,255,0,0.3)' }}>
+        <div style={{ color: 'white', fontSize: '24px', padding: '20px' }}>Solar System Container</div>
+        <SolarSystem />
+      </div>
+      
       <div className="absolute inset-0 flex justify-around opacity-20 -z-10">
         {[...Array(7)].map((_, i) => (
           <div
@@ -63,7 +71,7 @@ export default function Landing() {
         {shouldShowIntro && introStep === 'hi' && (
           <motion.div
             key="hi"
-            className="text-center"
+            className="text-center z-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -76,7 +84,7 @@ export default function Landing() {
         {shouldShowIntro && introStep === 'welcome' && (
           <motion.div
             key="welcome"
-            className="relative text-center"
+            className="relative text-center z-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -104,7 +112,7 @@ export default function Landing() {
           
           <motion.div
             key="main"
-            className="flex flex-col items-center justify-center w-full relative"
+            className="flex flex-col items-center justify-center w-full relative z-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
@@ -123,27 +131,10 @@ export default function Landing() {
           </motion.div>
         )}
 
-        {/* Navigation buttons - positioned absolutely at bottom of screen */}
-        {introStep === 'main' && (
-          <div className="absolute bottom-0 left-0 right-0 flex gap-6 z-10 flex-wrap justify-center w-full pb-8">
-            {[
-              { label: 'Projects', href: '/projects' },
-              { label: 'experience', href: '/experience' },
-              { label: 'school', href: '/school' },
-              { label: 'contact me', href: '/contact' },
-            ].map((item, idx) => (
-              <motion.div key={idx} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-                <Link
-                  href={item.href}
-                  className="px-4 py-2 rounded-full border border-white bg-black text-white hover:bg-white hover:text-black transition"
-                >
-                  {item.label}
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        )}
+
       </AnimatePresence>
+      
+      {introStep === 'main' && <div className="z-10"><PandaDock /></div>}
     </main>
   )
 }
