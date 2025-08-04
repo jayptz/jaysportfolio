@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import ExperienceTimeline from '../components/ExperienceTimeline'
 
 export default function ExperiencePage() {
   return (
@@ -13,14 +14,21 @@ export default function ExperiencePage() {
         ))}
       </div>
 
-      <div className="text-center z-10">
+      <div className="text-center z-10 mb-12">
         <h1 className="text-5xl font-extrabold text-white mb-8">
           Journey so far
         </h1>
         <p className="text-xl text-gray-300 mb-8 max-w-2xl">
           every stalk has roots. here's a glimpse of my Journey so far. Places i've learned, built, and grown. 🌱🐼
         </p>
-        
+      </div>
+
+      {/* Experience Timeline */}
+      <div className="w-full z-10">
+        <ExperienceTimeline />
+      </div>
+      
+      <div className="mt-12 z-10">
         <Link 
           href="/"
           className="px-6 py-3 rounded-full border border-white bg-black text-white hover:bg-white hover:text-black transition font-semibold"
