@@ -1,5 +1,6 @@
 'use client'
-import React from 'react';
+import React from 'react'
+import Image from 'next/image'
 // import './SolarSystem.css'; // Temporarily commented out
 
 const SolarSystem = () => {
@@ -78,15 +79,12 @@ const SolarSystem = () => {
           position: 'relative',
           zIndex: 1000
         }}>
-          <img 
+          <Image 
             src="/panda.gif" 
-            alt="Panda Sun" 
-            style={{ 
-              width: '120px', 
-              height: '120px', 
-              borderRadius: '50%',
-              imageRendering: 'auto'
-            }} 
+            alt="Panda" 
+            width={64}
+            height={64}
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16"
           />
         </div>
       </div>

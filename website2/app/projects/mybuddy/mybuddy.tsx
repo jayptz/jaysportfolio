@@ -1,10 +1,10 @@
 import Link from 'next/link'
-import { Github, ExternalLink, ArrowLeft } from 'lucide-react'
+import { Github, ArrowLeft } from 'lucide-react'
 import { Metadata } from 'next'
 import MyBuddyTechStack from '../../components/MyBuddyTechStack'
 
 export const metadata: Metadata = {
-  title: 'MyBuddy | Jay\'s Projects',
+  title: 'MyBuddy | Jay&apos;s Projects',
   description: 'MyBuddy is an AI mental health chatbot that uses GPT-4 to simulate supportive, empathetic conversations in a private and friendly interface.',
   keywords: ['AI', 'mental health', 'chatbot', 'GPT-4', 'therapy', 'support', 'conversational AI'],
 }
@@ -74,7 +74,7 @@ export default function MyBuddyPage() {
             <div>
               <h2 className="text-2xl font-bold text-white mb-4">About This Project</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                MyBuddy represents a compassionate approach to mental health support through AI technology. The chatbot leverages GPT-4's advanced language capabilities to provide empathetic, supportive conversations in a safe and private environment.
+                MyBuddy represents a compassionate approach to mental health support through AI technology. The chatbot leverages GPT-4&apos;s advanced language capabilities to provide empathetic, supportive conversations in a safe and private environment.
               </p>
               <p className="text-gray-300 leading-relaxed mb-4">
                 Designed with mental health awareness in mind, MyBuddy offers a judgment-free space for users to express their thoughts and feelings. The AI is trained to respond with empathy and understanding, providing emotional support while maintaining appropriate boundaries and encouraging professional help when needed.

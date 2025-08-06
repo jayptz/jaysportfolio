@@ -1,6 +1,7 @@
 import Link from 'next/link'
-import { Github, ExternalLink, ArrowLeft, Calendar, BookOpen } from 'lucide-react'
+import { ArrowLeft, Calendar, BookOpen } from 'lucide-react'
 import { Metadata } from 'next'
+import Image from 'next/image'
 
 // Define color variables
 const fadedLabel = '#9CA3AF'
@@ -13,12 +14,12 @@ const IconStack2 = BookOpen
 
 
 export const metadata: Metadata = {
-  title: 'MyBuddy | Jay\'s Projects',
-  description: 'MyBuddy is an AI mental health chatbot that uses GPT-4 to simulate supportive, empathetic conversations in a private and friendly interface.',
-  keywords: ['AI', 'mental health', 'chatbot', 'GPT-4', 'therapy', 'support', 'conversational AI'],
+  title: 'School | Jay&apos;s Education',
+  description: 'My academic journey at Wilfrid Laurier University studying Computer Science.',
+  keywords: ['education', 'computer science', 'university', 'academic', 'learning'],
 }
 
-export default function MyBuddyPage() {
+export default function SchoolPage() {
   return (
     <main className="relative min-h-screen bg-black">
       {/* Bamboo stalks background */}
@@ -48,9 +49,11 @@ export default function MyBuddyPage() {
                  
           <div className="mb-8">
             <div className="w-full h-full  from-gray-800 to-black rounded-xl overflow-hidden flex justify-center items-center">
-              <img 
+              <Image 
                 src="/WilfridLaurierUniversity.jpg" 
                 alt="Wilfrid Laurier University Campus" 
+                width={800}
+                height={400}
                 className="w-200 h-full object-cover object-center rounded-xl"
               />
             </div>
@@ -73,13 +76,13 @@ export default function MyBuddyPage() {
             <div>
               <h2 className="text-2xl font-bold text-white mb-4"></h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-              I'm a third-year Computer Science student at Wilfrid Laurier University, where I’ve built a strong foundation in both practical software development and core computer science theory. My coursework has covered essential areas such as data structures, algorithm analysis, and object-oriented design, giving me the tools to build and scale efficient, maintainable systems.
+              I&apos;m a third-year Computer Science student at Wilfrid Laurier University, where I&apos;ve built a strong foundation in both practical software development and core computer science theory. My coursework has covered essential areas such as data structures, algorithm analysis, and object-oriented design, giving me the tools to build and scale efficient, maintainable systems.
               </p>
               <p className="text-gray-300 leading-relaxed mb-4">
-              Outside of class, I’ve taken initiative to explore areas like AI-powered automation, cloud infrastructure, and human-centered design through hands-on projects, hackathons, and co-op experience. I've developed full-stack web platforms, mobile apps, and real-time analytics tools using Python, JavaScript, C++, and AWS—translating theory into production-level code.              
+              Outside of class, I&apos;ve taken initiative to explore areas like AI-powered automation, cloud infrastructure, and human-centered design through hands-on projects, hackathons, and co-op experience. I&apos;ve developed full-stack web platforms, mobile apps, and real-time analytics tools using Python, JavaScript, C++, and AWS—translating theory into production-level code.              
               </p>
               <p className="text-gray-300 leading-relaxed mb-4">
-              Heading into my third year, I'm excited to deepen my focus in AI, distributed systems, and quantum computing, with a goal of developing tools that push the boundaries of human-computer interaction and ethical technology design.
+              Heading into my third year, I&apos;m excited to deepen my focus in AI, distributed systems, and quantum computing, with a goal of developing tools that push the boundaries of human-computer interaction and ethical technology design.
               </p>
             </div>
 

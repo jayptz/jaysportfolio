@@ -1,10 +1,10 @@
 import Link from 'next/link'
-import { Github, ExternalLink, ArrowLeft } from 'lucide-react'
+import { Github, ArrowLeft } from 'lucide-react'
 import { Metadata } from 'next'
 import MyBuddyTechStack from '../../components/MyBuddyTechStack'
 
 export const metadata: Metadata = {
-  title: 'My Buddy | Jay\'s Projects',
+  title: 'My Buddy | Jay&apos;s Projects',
   description: 'GPT integrated personal mental-health assistant',
   keywords: ['AI', 'mental health', 'GPT', 'voice recognition', 'assistant', 'therapy'],
 }
@@ -77,7 +77,7 @@ export default function MyBuddyPage() {
                 MyBuddy is an AI-powered mental health assistant that combines voice recognition technology with GPT-3.5 to provide personalized conversational support. The application offers a safe, judgment-free environment for users to discuss their thoughts and feelings.
               </p>
               <p className="text-gray-300 leading-relaxed mb-4">
-                The system processes natural speech through Google's Speech-to-Text API, analyzes the content using OpenAI's GPT-3.5, and provides empathetic responses and guidance. This creates a unique therapeutic experience that's accessible anytime, anywhere.
+                The system processes natural speech through Google&apos;s Speech-to-Text API, analyzes the content using OpenAI&apos;s GPT-3.5, and provides empathetic responses and guidance. This creates a unique therapeutic experience that&apos;s accessible anytime, anywhere.
               </p>
             </div>
 

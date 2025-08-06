@@ -1,8 +1,9 @@
 import Link from 'next/link'
-import { Github, ExternalLink, ArrowLeft, Download } from 'lucide-react'
+import { ExternalLink, ArrowLeft } from 'lucide-react'
 import { Metadata } from 'next'
 import G1TechStack from '../../components/G1TechStack'
 import { NumberTicker } from '@/components/magicui/number-ticker'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'G1 App | Jay\'s Projects',
@@ -64,9 +65,11 @@ export default function G1AppPage() {
           {/* Project Image/Demo */}
           <div className="mb-8">
             <div className="w-full h-64 bg-gradient-to-br from-gray-600 to-gray-800 rounded-xl flex items-center justify-center overflow-hidden">
-              <img 
+              <Image 
                 src="/G1.webp" 
                 alt="G1 App Screenshot" 
+                width={800}
+                height={400}
                 className="w-full h-full object-cover rounded-xl"
               />
             </div>

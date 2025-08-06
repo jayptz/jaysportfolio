@@ -12,10 +12,10 @@ import {
   SiKubernetes,
   SiTerraform,
   SiGithubactions,
-  SiJenkins,
-  SiAmazon
+  SiJenkins
 } from 'react-icons/si'
 import { FaDatabase, FaAws } from 'react-icons/fa'
+import Image from 'next/image'
 
 interface TechItem {
   name: string
@@ -93,10 +93,12 @@ export default function GroundLinkTechStack() {
         {/* Center Panda - Randomly shown */}
         {showPanda && (
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-            <img 
+            <Image 
               src="/WorkingPanda.gif" 
               alt="Working Panda" 
-              className="w-24 h-24 rounded-full shadow-lg"
+              width={96}
+              height={96}
+              className="rounded-full shadow-lg"
             />
           </div>
         )}
@@ -115,7 +117,7 @@ export default function GroundLinkTechStack() {
                 className="text-green-800"
                 reverse={categoryIndex % 2 === 1} // Alternate direction for visual interest
               >
-                {items.map((item, itemIndex) => (
+                {items.map((item) => (
                   <div
                     key={`${category.name}-${item.name}`}
                     className="w-12 h-12 rounded-lg flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform duration-200 cursor-pointer group relative"

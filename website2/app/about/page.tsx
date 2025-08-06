@@ -37,9 +37,8 @@ export default function AboutPage() {
             <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10">
               <p className="leading-relaxed">
                 Hey there! I'm <span className="text-white font-semibold">Jay Patel</span>, a Computer Science student at 
-                <span className="text-blue-400 font-semibold"> Wilfrid Laurier University</span> with a passion for AI, 
-                full-stack development, and cloud computing. Currently maintaining a <span className="text-green-400 font-semibold">3.94 GPA</span> and 
-                earning my spot on the <span className="text-yellow-400 font-semibold">Dean's List twice</span>, I'm always curious about 
+                <span className="text-purple-700 font-semibold"> Wilfrid Laurier University</span> with a passion for AI, 
+                full-stack development, and cloud computing. Currently maintaining a <span className="text-white font-semibold">10.93 GPA</span>, I'm always curious about 
                 how technology can solve real-world problems in creative and meaningful ways.
               </p>
             </div>

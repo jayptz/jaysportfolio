@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Github, ExternalLink, ArrowLeft } from 'lucide-react'
+import { Github, ArrowLeft } from 'lucide-react'
 import { Metadata } from 'next'
 import ScoreWiseTechStack from '../../components/ScoreWiseTechStack'
 

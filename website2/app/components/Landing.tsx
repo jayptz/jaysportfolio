@@ -1,6 +1,5 @@
 'use client'
 import { motion, AnimatePresence} from 'framer-motion'
-import Link from 'next/link'
 import { useEffect, useState, useMemo } from 'react'
 import { Globe } from "@/components/magicui/globe";
 import PandaDock from './PandaDock'
@@ -104,7 +103,7 @@ export default function Landing() {
               <Globe className="!relative !w-full !h-full !max-w-none text-gray-300" />
             </div>
             </motion.div>
-            <h2 className="text-3xl font-bold text-white">welcome to Jay's world</h2>
+            <h2 className="text-3xl font-bold text-white">welcome to Jay&apos;s world</h2>
           </motion.div>
 
         )}
@@ -120,7 +119,7 @@ export default function Landing() {
             transition={{ duration: 1 }}
           >
             <h1 className="mb- text-3xl font-bold text-white z-10">
-              welcome to Jay's world
+              welcome to Jay&apos;s world
             </h1>
             <motion.img
               src={pandaGif}

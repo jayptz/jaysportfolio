@@ -7,12 +7,7 @@ import {
   SiTypescript, 
   SiPython, 
   SiJavascript, 
-  SiCplusplus,
-  SiHtml5,
-  SiCss3,
-  SiMongodb,
-  SiExpress,
-  SiGit
+  SiCplusplus
 } from 'react-icons/si'
 
 interface TechOrbitProps {

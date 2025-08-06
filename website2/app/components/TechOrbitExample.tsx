@@ -8,7 +8,7 @@ export default function TechOrbitExample() {
   return (
     <div className="mt-16 z-10">
       <h2 className="text-3xl font-bold text-white mb-8 text-center">
-        Technologies I've worked with
+        Technologies I&apos;ve worked with
       </h2>
       <TechOrbit>
         {/* Example with actual tech icons - uncomment and install react-icons to use */}

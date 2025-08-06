@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Github, ExternalLink, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface Project {
   id: string
@@ -43,10 +44,12 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       <div className="relative h-40 overflow-hidden">
         {project.image ? (
           <div className="w-full h-full">
-            <img 
-              src={project.image} 
-              alt={`${project.title} screenshot`}
-              className={`w-full h-full object-cover ${project.imagePosition || 'object-center'}`}
+            <Image 
+              src={project.image || '/PandaCoding.png'} 
+              alt={project.title}
+              width={400}
+              height={200}
+              className={`w-full h-full object-cover ${project.imagePosition || 'object-center'} rounded-lg`}
             />
             <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-300" />
           </div>

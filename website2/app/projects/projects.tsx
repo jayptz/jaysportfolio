@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import ProjectBentoGrid from '@/components/ProjectBentoGrid'
-import image from 'next/image'
+
 const projects = [
   {
     id: '1',

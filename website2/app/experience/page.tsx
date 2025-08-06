@@ -19,7 +19,7 @@ export default function ExperiencePage() {
           Journey so far
         </h1>
         <p className="text-xl text-gray-300 mb-8 max-w-2xl">
-          every stalk has roots. here's a glimpse of my Journey so far. Places i've learned, built, and grown. 🌱🐼
+          every stalk has roots. here&apos;s a glimpse of my Journey so far. Places i&apos;ve learned, built, and grown. 🌱🐼
         </p>
       </div>
 

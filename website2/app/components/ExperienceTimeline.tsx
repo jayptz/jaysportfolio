@@ -1,6 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 
 interface ExperienceItem {
   id: string
@@ -111,10 +112,12 @@ export default function ExperienceTimeline() {
                 index % 2 === 0 ? 'justify-end md:justify-end justify-center' : 'justify-start md:justify-start justify-center'
               }`}>
                 <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center border-2 border-green-400">
-                  <img 
+                  <Image 
                     src={item.icon || '/PandaCoding.png'} 
                     alt="Panda Experience Icon"
-                    className="w-8 h-8 object-contain"
+                    width={32}
+                    height={32}
+                    className="object-contain"
                     onError={(e) => {
                       // Fallback to a panda emoji if image fails to load
                       e.currentTarget.style.display = 'none'
