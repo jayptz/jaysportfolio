@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { OrbitingCircles } from '@/components/magicui/orbiting-circles'
 import { 
   SiHtml5,
@@ -41,16 +41,7 @@ const techCategories = [
 ]
 
 export default function MyBuddyTechStack() {
-  const [showPanda, setShowPanda] = useState(true) // Start visible
-
-  useEffect(() => {
-    // Pattern: Show panda every 3 seconds, hide for 2 seconds
-    const interval = setInterval(() => {
-      setShowPanda(prev => !prev)
-    }, 2500) // Toggle every 2.5 seconds
-
-    return () => clearInterval(interval)
-  }, [])
+  const showPanda = true // Always show panda
 
   const getItemsByCategory = (categoryName: string) => {
     return techItems.filter(item => item.category === categoryName)
