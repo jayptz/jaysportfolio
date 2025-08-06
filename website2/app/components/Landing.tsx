@@ -52,8 +52,6 @@ export default function Landing() {
 
   return (
     <main className="relative min-h-screen bg-black flex items-center justify-center overflow-hidden">
-      {/* Social Links - Only on Landing Page */}
-      <SocialLinks />
       
       {/* Solar System Background - Always visible */}
       <div className="absolute inset-0 -z-20" style={{ border: '2px solid blue', backgroundColor: 'rgba(0,255,0,0.3)' }}>
@@ -138,7 +136,13 @@ export default function Landing() {
 
       </AnimatePresence>
       
-      {introStep === 'main' && <div className="z-10"><PandaDock /></div>}
+      {introStep === 'main' && (
+        <>
+          {/* Social Links - Only show after introduction */}
+          <SocialLinks />
+          <div className="z-10"><PandaDock /></div>
+        </>
+      )}
     </main>
   )
 }

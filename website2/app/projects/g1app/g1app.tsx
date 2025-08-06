@@ -1,6 +1,8 @@
 import Link from 'next/link'
-import { Github, ExternalLink, ArrowLeft } from 'lucide-react'
+import { Github, ExternalLink, ArrowLeft, Download } from 'lucide-react'
 import { Metadata } from 'next'
+import G1TechStack from '../../components/G1TechStack'
+import { NumberTicker } from '@/components/magicui/number-ticker'
 
 export const metadata: Metadata = {
   title: 'G1 App | Jay\'s Projects',
@@ -113,15 +115,21 @@ export default function G1AppPage() {
             </div>
           </div>
 
-          {/* Technology Stack */}
-          <div className="mt-12">
-            <h2 className="text-2xl font-bold text-white mb-4">Technology Stack</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {['React Native', 'JavaScript', 'Firebase', 'Google Play Console', 'Android SDK', 'UI/UX Design', 'Content Management', 'Analytics'].map((tech) => (
-                <div key={tech} className="bg-white rounded-lg p-4 text-center shadow-sm">
-                  <span className="text-black font-medium">{tech}</span>
-                </div>
-              ))}
+          {/* Current Downloads Section */}
+          <div className="mt-12 text-center">
+              <div className="flex items-center justify-center gap-2">
+                <NumberTicker 
+                  value={500} 
+                  className="text-4xl font-bold text-white"
+                />
+                <span className="text-4xl font-bold text-white">+ downloads</span>
+              </div>
+          </div>
+
+          {/* Technology Stack with Orbiting Circles */}
+          <div className="mt-16 mb-32">
+            <div className="relative h-[600px] flex items-center justify-center">
+              <G1TechStack />
             </div>
           </div>
         </div>
