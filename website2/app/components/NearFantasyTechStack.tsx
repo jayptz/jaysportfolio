@@ -9,7 +9,7 @@ import {
   SiFlask,
   SiPython
 } from 'react-icons/si'
-import { FaYahoo } from 'react-icons/fa'
+import { FaYahoo, FaCube } from 'react-icons/fa'
 
 interface TechItem {
   name: string
@@ -30,7 +30,7 @@ const techItems: TechItem[] = [
   
   // APIs & Blockchain
   { name: 'Yahoo Sports API', icon: FaYahoo, category: 'APIs & Blockchain' },
-  { name: 'NEAR Blockchain', icon: SiPython, category: 'APIs & Blockchain' }
+  { name: 'NEAR Blockchain', icon: FaCube, category: 'APIs & Blockchain' }
 ]
 
 const techCategories = [
