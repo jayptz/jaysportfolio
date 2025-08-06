@@ -110,38 +110,40 @@ export default function Landing() {
         
 
         {introStep === 'main' && (
-          
           <motion.div
             key="main"
-            className="flex flex-col items-center justify-center w-full relative z-10"
+            className="w-full h-full relative z-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <h1 className="mb- text-3xl font-bold text-white z-10">
-              welcome to Jay&apos;s world
-            </h1>
-            <motion.img
-              src={pandaGif}
-              alt="Random Panda"
-              className="w-40 h-auto mx-auto drop-shadow-xl"
-              initial={{ y: 0 }}
-              animate={{ y: [0, -10, 0] }}
-              transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
-            />
+            {/* Welcome text and panda */}
+            <div className="flex flex-col items-center justify-center h-full">
+              <h1 className="mb-4 text-3xl font-bold text-white z-10">
+                welcome to Jay&apos;s world
+              </h1>
+              <motion.img
+                src={pandaGif}
+                alt="Random Panda"
+                className="w-40 h-auto mx-auto drop-shadow-xl"
+                initial={{ y: 0 }}
+                animate={{ y: [0, -10, 0] }}
+                transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
+              />
+            </div>
+
+            {/* Social Links and Dock - positioned at bottom */}
+            <div className="absolute bottom-0 left-0 right-0">
+              <SocialLinks />
+              <div className="z-10">
+                <PandaDock />
+              </div>
+            </div>
           </motion.div>
         )}
 
 
       </AnimatePresence>
-      
-      {introStep === 'main' && (
-        <>
-          {/* Social Links - Only show after introduction */}
-          <SocialLinks />
-          <div className="z-10"><PandaDock /></div>
-        </>
-      )}
     </main>
   )
 }
