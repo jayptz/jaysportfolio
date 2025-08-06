@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Github, ExternalLink, ArrowLeft } from 'lucide-react'
 import { Metadata } from 'next'
+import NearFantasyTechStack from '../../components/NearFantasyTechStack'
 
 export const metadata: Metadata = {
   title: 'Near Fantasy | Jay\'s Projects',
@@ -111,15 +112,10 @@ export default function NearFantasyPage() {
             </div>
           </div>
 
-          {/* Technology Stack */}
-          <div className="mt-12">
-            <h2 className="text-2xl font-bold text-white mb-4">Technology Stack</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {['NEAR Protocol', 'Rust', 'AssemblyScript', 'React', 'Web3.js', 'Smart Contracts', 'IPFS', 'MetaMask'].map((tech) => (
-                <div key={tech} className="bg-white rounded-lg p-4 text-center shadow-sm">
-                  <span className="text-black font-medium">{tech}</span>
-                </div>
-              ))}
+          {/* Technology Stack with Orbiting Circles */}
+          <div className="mt-16 mb-32">
+            <div className="relative h-[600px] flex items-center justify-center">
+              <NearFantasyTechStack />
             </div>
           </div>
         </div>

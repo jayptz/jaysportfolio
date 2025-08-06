@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import ExperienceTimeline from '../components/ExperienceTimeline'
+import TechOrbit from '../components/TechOrbit'
 
 export default function ExperiencePage() {
   return (
@@ -26,6 +27,17 @@ export default function ExperiencePage() {
       {/* Experience Timeline */}
       <div className="w-full z-10">
         <ExperienceTimeline />
+      </div>
+
+      {/* Tech Orbit */}
+      <div className="mt-16 z-10">
+        <h2 className="text-3xl font-bold text-white mb-8 text-center">
+          Technologies I've worked with
+        </h2>
+        <TechOrbit />
+        <p className="text-center text-gray-400 mt-4 text-sm">
+          Hover over the orbiting technologies to see them in action! 🚀
+        </p>
       </div>
       
       <div className="mt-12 z-10">

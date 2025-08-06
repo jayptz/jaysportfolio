@@ -40,7 +40,7 @@ const projects = [
     imagePosition: '',
     githubUrl: 'https://github.com/jayptz/NEAR-Fantasy',
     liveUrl: '',
-    slug: 'near-fantasy'
+    slug: 'Near-Fantasy'
   },
   {
     id: '5',

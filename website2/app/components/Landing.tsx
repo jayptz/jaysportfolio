@@ -5,6 +5,7 @@ import { useEffect, useState, useMemo } from 'react'
 import { Globe } from "@/components/magicui/globe";
 import PandaDock from './PandaDock'
 import SolarSystem from './SolarSystem'
+import SocialLinks from './SocialLinks'
 
 
 
@@ -51,6 +52,9 @@ export default function Landing() {
 
   return (
     <main className="relative min-h-screen bg-black flex items-center justify-center overflow-hidden">
+      {/* Social Links - Only on Landing Page */}
+      <SocialLinks />
+      
       {/* Solar System Background - Always visible */}
       <div className="absolute inset-0 -z-20" style={{ border: '2px solid blue', backgroundColor: 'rgba(0,255,0,0.3)' }}>
         <div style={{ color: 'white', fontSize: '24px', padding: '20px' }}>Solar System Container</div>
