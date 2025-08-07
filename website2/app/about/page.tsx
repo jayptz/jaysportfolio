@@ -70,9 +70,7 @@ export default function AboutPage() {
               <h2 className="text-2xl font-bold text-white mb-4">Beyond the Code</h2>
               <div className="space-y-4">
                 <p className="leading-relaxed">
-                  When I&apos;m not coding, I&apos;m usually behind a camera! I&apos;m excited to share more of my creative side through my <Link href="/photos" className="text-gray-400 font-semibold hover:text-white transition">
-                    Photo Page
-                  </Link>, where I showcase my photography work — there&apos;s something magical about capturing moments and stories through a lens.
+                  When I&apos;m not coding, I&apos;m usually behind a camera! I love capturing moments and stories through a lens — there&apos;s something magical about seeing the world through a different perspective.
                 </p>
               </div>
             </div>
