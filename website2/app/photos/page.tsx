@@ -111,11 +111,6 @@ export default function PhotosPage() {
                 />
                 {/* Overlay effect */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
-                {/* Photo info overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-white text-sm font-medium">{photo.alt}</p>
-                </div>
               </div>
             </motion.div>
           ))}
@@ -173,13 +168,6 @@ export default function PhotosPage() {
                   className="object-contain"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
                 />
-              </div>
-              
-              {/* Photo title */}
-              <div className="mt-4 text-center">
-                <h3 className="text-white text-xl font-semibold">
-                  {selectedPhoto.alt}
-                </h3>
               </div>
             </motion.div>
           </motion.div>
