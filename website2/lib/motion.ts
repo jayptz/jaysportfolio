@@ -7,6 +7,7 @@ import {
   useTransform,
   useInView
 } from 'framer-motion'
+import type { MotionProps, MotionValue } from 'framer-motion'
 
 export {
   motion,
@@ -16,3 +17,5 @@ export {
   useTransform,
   useInView
 }
+
+export type { MotionProps, MotionValue }
