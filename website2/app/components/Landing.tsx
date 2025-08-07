@@ -101,7 +101,7 @@ export default function Landing() {
             exit={{ opacity: 0 }}
             transition={{ duration: 2 }}
               >
-            <div className="relative w-[min(80vw,600px)] h-[min(80vh,600px)] flex items-center justify-center">
+            <div className="relative w-[min(90vw,600px)] h-[min(70vh,600px)] md:w-[min(80vw,600px)] md:h-[min(80vh,600px)] flex items-center justify-center">
               <Globe className="!relative !w-full !h-full !max-w-none text-gray-300" />
             </div>
             </motion.div>

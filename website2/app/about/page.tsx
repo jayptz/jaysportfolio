@@ -51,28 +51,18 @@ export default function AboutPage() {
               <h2 className="text-2xl font-bold text-white mb-4">What I&apos;ve Been Building</h2>
               <div className="space-y-4">
                 <p className="leading-relaxed">
-                  I&apos;ve been fortunate to work on some pretty exciting projects! I built <span className="text-purple-400 font-semibold">ResDex</span>, 
+                  I&apos;ve been fortunate to work on some pretty exciting projects! I'm currently building <span className="text-white- font-bold">ResDex</span>, 
                   a mentorship and research platform that connects students with opportunities, and created 
-                  <span className="text-green-400 font-semibold"> MyBuddy</span>, an AI-powered mental health app that actually won 
-                  <span className="text-yellow-400 font-semibold">2nd place at SerenityHacks</span>. More recently, I published the 
-                  <span className="text-blue-400 font-semibold">G1 App</span>, a mobile driving test simulator that&apos;s helped over 
-                  <span className="text-orange-400 font-semibold">500+ users</span> pass their driving tests.
+                  <span className="text-green-400 font-semibold"> MyBuddy</span>,
+                  <span className="text-yellow-400 font-semibold"> 2nd place at SerenityHacks</span>. More recently, I published the 
+                  <span className="text-blue-400 font-semibold"> G1 App</span>, a mobile driving test simulator that&apos;s helped over 
+                  <span className="text-blue-400 font-semibold"> 500+ users</span> pass their driving tests.
                 </p>
                 <p className="leading-relaxed">
-                  I&apos;m also working as an <span className="text-cyan-400 font-semibold">AI code reviewer at Outlier AI</span>, 
+                  I&apos;m also working as an AI code reviewer at <span className="text-white-400 font-bold"> Outlier AI</span>, 
                   where I get to dive deep into code quality and help shape the future of AI-assisted development.
                 </p>
               </div>
-            </div>
-
-            {/* Technical Skills */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10">
-              <p className="leading-relaxed">
-                I&apos;m comfortable working with <span className="text-blue-400 font-semibold">React</span>, 
-                <span className="text-yellow-400 font-semibold"> Python</span>, <span className="text-orange-400 font-semibold">AWS</span>, 
-                and <span className="text-green-400 font-semibold">OpenAI APIs</span>, but honestly, the tools are just means to an end. 
-                What excites me most is using technology to create experiences that feel both intelligent and genuinely human-centered.
-              </p>
             </div>
 
             {/* Creative Interests */}
@@ -80,19 +70,9 @@ export default function AboutPage() {
               <h2 className="text-2xl font-bold text-white mb-4">Beyond the Code</h2>
               <div className="space-y-4">
                 <p className="leading-relaxed">
-                  When I&apos;m not coding, I&apos;m usually behind a camera or controller! I&apos;m excited to share more of my creative side through my 
-                  <Link href="/photos" className="text-pink-400 font-semibold hover:text-pink-300 transition inline-flex items-center gap-1">
-                    <Camera className="w-4 h-4" />
+                  When I&apos;m not coding, I&apos;m usually behind a camera! I&apos;m excited to share more of my creative side through my <Link href="/photos" className="text-gray-400 font-semibold hover:text-white transition">
                     Photo Page
                   </Link>, where I showcase my photography work — there&apos;s something magical about capturing moments and stories through a lens.
-                </p>
-                <p className="leading-relaxed">
-                  I&apos;m also working on a 
-                  <Link href="/gaming" className="text-purple-400 font-semibold hover:text-purple-300 transition inline-flex items-center gap-1">
-                    <Gamepad2 className="w-4 h-4" />
-                    Gaming Page
-                  </Link> to highlight my achievements and passion for game design and interactivity. 
-                  Gaming has taught me so much about user experience, storytelling, and what makes digital experiences truly engaging.
                 </p>
               </div>
             </div>

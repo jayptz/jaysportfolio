@@ -2,11 +2,18 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from '@/lib/motion'
 import { Menu, X } from 'lucide-react'
 
 export default function MobileNav() {
   const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname()
+  
+  // Only show on main page, not during intro
+  if (pathname !== '/') {
+    return null
+  }
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
@@ -27,7 +34,7 @@ export default function MobileNav() {
       {/* Hamburger Button */}
       <button
         onClick={toggleMenu}
-        className="fixed top-4 right-4 z-50 p-2 bg-black/20 backdrop-blur-sm border border-white/20 rounded-lg text-white hover:bg-white/10 transition-colors"
+        className="fixed top-4 left-4 z-50 p-2 bg-black/20 backdrop-blur-sm border border-white/20 rounded-lg text-white hover:bg-white/10 transition-colors"
         aria-label="Toggle menu"
       >
         <AnimatePresence mode="wait">
