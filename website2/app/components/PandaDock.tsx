@@ -27,13 +27,6 @@ export default function PandaDock() {
           </Link>
         </DockIcon>
         
-
-        <DockIcon>
-          <Link href="/experience" className="text-white text-base font-medium">
-            exPerience
-          </Link>
-        </DockIcon>
-        
         <DockIcon>
           <Link href="/school" className="text-white text-base font-medium">
             school

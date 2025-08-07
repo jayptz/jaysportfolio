@@ -4,6 +4,16 @@ import ProjectBentoGrid from '@/components/ProjectBentoGrid'
 const projects = [
   {
     id: '1',
+    title: 'ResDex',
+    description: 'A comprehensive mentorship and research platform that connects students with opportunities. Built with React, Node.js, and PostgreSQL.',
+    image: '/resdex.jpeg',
+    imagePosition: 'object-center',
+    githubUrl: 'https://github.com/devp19/ResDex',
+    liveUrl: 'https://www.resdex.ca/',
+    slug: 'resdex'
+  },
+  {
+    id: '2',
     title: 'GroundLink',
     description: 'GroundLink is a real-time dashboard for managing and tracking fieldwork through live maps and mobile task updates.',
     image: '',
@@ -13,7 +23,7 @@ const projects = [
     slug: 'groundlink'
   },
   {
-    id: '2',
+    id: '3',
     title: 'ScoreWise',
     description: 'ScoreWise is a real-time NBA stats tracker that delivers personalized fantasy insights by SMS ',
     image: '',
@@ -23,7 +33,7 @@ const projects = [
     slug: 'scorewise'
   },
   {
-    id: '3',
+    id: '4',
     title: 'G1 App',
     description: 'A mobile app that helps Ontario drivers study for the G1 test. Features flashcards, randomized quizzes, and a clean user-friendly interface.',
     image: '/G1.webp',
@@ -33,7 +43,7 @@ const projects = [
     slug: 'g1app'
   },
   {
-    id: '4',
+    id: '5',
     title: 'Near Fantasy',
     description: 'A blockchain-based fantasy app built on NEAR Protocol. It enables secure, decentralized team management and gameplay.',
     image: '',
@@ -43,7 +53,7 @@ const projects = [
     slug: 'Near-Fantasy'
   },
   {
-    id: '5',
+    id: '6',
     title: 'MyBuddy',
     description: 'MyBuddy is an AI mental health chatbot that uses GPT-4 to simulate supportive, empathetic conversations in a private and friendly interface.',
     image: '/MyBuddyWebsite.png',
