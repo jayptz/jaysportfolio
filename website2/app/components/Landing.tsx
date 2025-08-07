@@ -52,7 +52,6 @@ export default function Landing() {
 
   return (
     <main className="relative min-h-screen bg-black flex items-center justify-center overflow-hidden">
-      <MobileNav shouldShowIntro={shouldShowIntro} introStep={introStep} />
       
       {/* Solar System Background - Always visible */}
       <div className="absolute inset-0 -z-20" style={{ border: '2px solid blue', backgroundColor: 'rgba(0,255,0,0.3)' }}>
