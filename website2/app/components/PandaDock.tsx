@@ -3,6 +3,7 @@
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { Dock, DockIcon } from '@/components/magicui/dock'
+import { motion } from 'framer-motion'
 
 export default function PandaDock() {
   const pathname = usePathname()
@@ -13,24 +14,42 @@ export default function PandaDock() {
   }
 
   return (
-    <div className="fixed bottom-6 inset-x-0 z-50 flex justify-center">
+    <div className="fixed bottom-6 inset-x-0 z-50 flex justify-center hidden md:flex">
       <Dock className="bg-black/20 border-white/20" iconSize={200} iconMagnification={85}>
-      <DockIcon>
-          <Link href="/projects" className="text-white text-base font-medium">
-            ProJects
-          </Link>
+        <DockIcon>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+          >
+            <Link href="/projects" className="text-white text-base font-medium">
+              ProJects
+            </Link>
+          </motion.div>
         </DockIcon>
         
         <DockIcon>
-          <Link href="/about" className="text-white text-base font-medium">
-            about me
-          </Link>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+          >
+            <Link href="/about" className="text-white text-base font-medium">
+              about me
+            </Link>
+          </motion.div>
         </DockIcon>
         
         <DockIcon>
-          <Link href="/school" className="text-white text-base font-medium">
-            school
-          </Link>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+          >
+            <Link href="/school" className="text-white text-base font-medium">
+              school
+            </Link>
+          </motion.div>
         </DockIcon>
       </Dock>
     </div>

@@ -5,6 +5,7 @@ import { Globe } from "@/components/magicui/globe";
 import PandaDock from './PandaDock'
 import SolarSystem from './SolarSystem'
 import SocialLinks from './SocialLinks'
+import MobileNav from './MobileNav'
 
 
 
@@ -51,6 +52,7 @@ export default function Landing() {
 
   return (
     <main className="relative min-h-screen bg-black flex items-center justify-center overflow-hidden">
+      <MobileNav />
       
       {/* Solar System Background - Always visible */}
       <div className="absolute inset-0 -z-20" style={{ border: '2px solid blue', backgroundColor: 'rgba(0,255,0,0.3)' }}>
