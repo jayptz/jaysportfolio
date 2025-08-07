@@ -82,7 +82,7 @@ export default function AboutPage() {
                 </h3>
                 <ul className="text-gray-300 text-sm lg:text-base space-y-2 mb-4">
                   <li>Honours Bachelors of Science</li>
-                  <li>10.93 GPA</li>
+                  <li>3.89 GPA</li>
                   <li>Computer Science</li>
                   <li>September 2023 – Present</li>
                 </ul>
