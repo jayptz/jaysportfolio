@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { Dock, DockIcon } from '@/components/magicui/dock'
-import { motion } from 'framer-motion'
+import { motion } from '@/lib/motion'
 
 export default function PandaDock() {
   const pathname = usePathname()

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, Gamepad2, Trophy, Users } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { motion } from '@/lib/motion'
 
 export default function GamingPage() {
   return (
