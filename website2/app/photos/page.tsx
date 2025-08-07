@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link'
 import { ArrowLeft, Camera } from 'lucide-react'
-// import { motion } from '@/lib/motion'
+import { motion } from '@/lib/motion'
 
 export default function PhotosPage() {
   return (
