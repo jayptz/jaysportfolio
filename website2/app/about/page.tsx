@@ -96,10 +96,12 @@ export default function AboutPage() {
                      • Wilfrid • Laurier • University 
                     </SpinningText>
                                          <div className="absolute inset-0 flex items-center justify-center z-10">
-                       <img 
+                       <Image 
                          src="/WilfridLaurierUniversity.jpg" 
                          alt="Laurier University" 
-                         className="w-8 h-8 rounded-full object-cover"
+                         width={32}
+                         height={32}
+                         className="rounded-full object-cover"
                        />
                      </div>
                   </div>

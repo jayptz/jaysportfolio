@@ -2,15 +2,18 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SmoothCursor } from "./components/SmoothCursor";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: 'swap',
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -41,6 +44,13 @@ export default function RootLayout({
           crossOrigin="anonymous" 
           referrerPolicy="no-referrer" 
         />
+        {/* Preload critical resources */}
+        <link rel="preload" href="/panda.gif" as="image" />
+        <link rel="preload" href="/panda2.gif" as="image" />
+        <link rel="preload" href="/panda3.gif" as="image" />
+        <link rel="preload" href="/panda4.gif" as="image" />
+        <link rel="preload" href="/panda5.gif" as="image" />
+        <link rel="preload" href="/WilfridLaurierUniversity.jpg" as="image" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black`}
@@ -48,6 +58,7 @@ export default function RootLayout({
       >
         <SmoothCursor />
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );

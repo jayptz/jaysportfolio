@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Github, ArrowLeft, ExternalLink } from 'lucide-react'
 import { Metadata } from 'next'
 import ResDexTechStack from '../../components/ResDexTechStack'
@@ -72,10 +73,13 @@ export default function ResDexPage() {
           {/* Project Image/Demo */}
           <div className="mb-8">
             <div className="w-full h-64 bg-gradient-to-br from-blue-800 to-purple-900 rounded-xl flex items-center justify-center overflow-hidden">
-              <img 
+              <Image 
                 src="/resdex.jpeg" 
                 alt="ResDex Platform Screenshot" 
+                width={800}
+                height={256}
                 className="w-full h-full object-cover rounded-xl"
+                priority
               />
             </div>
           </div>
