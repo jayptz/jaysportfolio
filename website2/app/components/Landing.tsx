@@ -122,7 +122,7 @@ export default function Landing() {
             {/* Welcome text and panda */}
             <div className="flex flex-col items-center justify-center h-full">
               <h1 className="mb-4 text-3xl font-bold text-white z-10">
-                welcome to Jay&apos;s world
+                Jay&apos;s world
               </h1>
               <motion.img
                 src={pandaGif}

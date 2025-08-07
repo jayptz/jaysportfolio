@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { Github, ExternalLink, ArrowLeft, Calendar, BookOpen } from 'lucide-react'
 import { Metadata } from 'next'
+import AnimatedImage from './AnimatedImage'
 
 // Define color variables
 const fadedLabel = '#9CA3AF'
@@ -48,13 +49,10 @@ export default function SchoolPage() {
         {/* Project Header */}
                  
           <div className="mb-8 flex justify-center">
-            <div className="w-full max-w-4xl h-64 md:h-80 rounded-xl overflow-hidden">
-              <img 
-                src="/WilfridLaurierUniversity.jpg" 
-                alt="Wilfrid Laurier University Campus" 
-                className="w-full h-full object-cover object-center rounded-xl"
-              />
-            </div>
+            <AnimatedImage 
+              src="/WilfridLaurierUniversity.jpg" 
+              alt="Wilfrid Laurier University Campus" 
+            />
           </div>
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-purple-700 mb-4">

@@ -82,10 +82,6 @@ export default function ProjectsPage() {
           <h1 className="text-5xl font-bold text-white mb-4">
             panda builds
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            projects grown from scratch, debugged with tears. each project represents a challenge and learning opportunity.
-            from curious experiements to polished products. 🛠️🐼
-          </p>
         </div>
 
         <ProjectBentoGrid projects={projects} />
