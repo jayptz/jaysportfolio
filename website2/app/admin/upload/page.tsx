@@ -58,7 +58,8 @@ export default function AdminUploadPage() {
       })
 
       if (response.ok) {
-        setMessage({ type: 'success', text: `${selectedFiles.length} photos uploaded successfully!` })
+        const result = await response.json()
+        setMessage({ type: 'success', text: `${selectedFiles.length} photos uploaded successfully! Blob URLs saved.` })
         setSelectedFiles([])
         setPreviews([])
         if (fileInputRef.current) {
