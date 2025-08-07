@@ -29,7 +29,7 @@ const socialLinks = [
 
 export default function SocialLinks() {
   return (
-    <div className="fixed top-4 right-4 z-50 flex gap-4">
+    <div className="flex gap-4 justify-center py-4">
       {socialLinks.map((social) => (
         <a
           key={social.name}

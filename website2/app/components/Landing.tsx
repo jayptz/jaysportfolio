@@ -2,7 +2,7 @@
 import { motion, AnimatePresence} from 'framer-motion'
 import { useEffect, useState, useMemo } from 'react'
 import { Globe } from "@/components/magicui/globe";
-import PandaDock from './PandaDock'
+import HamburgerMenu from './HamburgerMenu'
 import SolarSystem from './SolarSystem'
 import SocialLinks from './SocialLinks'
 import MobileNav from './MobileNav'
@@ -122,7 +122,7 @@ export default function Landing() {
             {/* Welcome text and panda */}
             <div className="flex flex-col items-center justify-center h-full">
               <h1 className="mb-4 text-3xl font-bold text-white z-10">
-                Jay&apos;s World
+              Jay&apos;s World
               </h1>
               <motion.img
                 src={pandaGif}
@@ -134,12 +134,12 @@ export default function Landing() {
               />
             </div>
 
-            {/* Social Links and Dock - positioned at bottom */}
-            <div className="absolute bottom-0 left-0 right-0">
+            {/* Hamburger Menu - positioned at top right */}
+            <HamburgerMenu />
+
+            {/* Social Links - positioned at absolute bottom */}
+            <div className="absolute-bottom ">
               <SocialLinks />
-              <div className="z-10">
-                <PandaDock />
-              </div>
             </div>
           </motion.div>
         )}

@@ -20,11 +20,14 @@ export default function PandaDock() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         transition={{ duration: 0.2 }}
-        className="bg-black/20 border border-white/20 rounded-2xl px-8 py-4 backdrop-blur-sm"
+        className="bg-black/20 border border-white/20 rounded-2xl px-8 py-4 backdrop-blur-sm text-right"
       >
-        <Link href="/projects" className="text-white text-base font-medium">
+       <Link
+          href="/projects"
+          className="block w-full text-right text-white text-base font-medium"
+        >
           projects
-        </Link>
+       </Link>
       </motion.div>
       
       {/* Me Block */}
@@ -32,11 +35,14 @@ export default function PandaDock() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         transition={{ duration: 0.2 }}
-        className="bg-black/20 border border-white/20 rounded-2xl px-8 py-4 backdrop-blur-sm"
+        className="bg-black/20 border border-white/20 rounded-2xl px-8 py-4 backdrop-blur-sm text-right"
       >
-        <Link href="/about" className="text-white text-base font-medium">
-          me
-        </Link>
+       <Link
+          href="/projects"
+          className="block w-full text-right text-white text-base font-medium"
+        >
+          projects
+       </Link>
       </motion.div>
       
       {/* Experience Block */}
@@ -44,7 +50,7 @@ export default function PandaDock() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         transition={{ duration: 0.2 }}
-        className="bg-black/20 border border-white/20 rounded-2xl px-8 py-4 backdrop-blur-sm"
+        className="bg-black/20 border border-white/20 rounded-2xl px-8 py-4 backdrop-blur-sm text-right"
       >
         <Link href="/experience" className="text-white text-base font-medium">
           experience
