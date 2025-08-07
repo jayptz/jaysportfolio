@@ -18,8 +18,8 @@ export default function AboutPage() {
       </div>
 
       <div className="relative z-10 container mx-auto px-4 py-12">
-        {/* Back Button */}
-        <div className="mb-8">
+        {/* Navigation Buttons */}
+        <div className="mb-8 flex flex-wrap gap-4">
           <Link 
             href="/"
             className="inline-flex items-center px-4 py-2 rounded-full border border-white bg-black text-white hover:bg-white hover:text-black transition font-semibold"
@@ -32,7 +32,7 @@ export default function AboutPage() {
         {/* Main Content */}
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl font-extrabold text-white mb-12 text-center">
-            about the panda
+          meet the Panda
           </h1>
           
           <div className="space-y-8 text-lg text-gray-300">
@@ -53,9 +53,9 @@ export default function AboutPage() {
                 <p className="leading-relaxed">
                   I&apos;ve been fortunate to work on some pretty exciting projects! I'm currently building <span className="text-white- font-bold">ResDex</span>, 
                   a mentorship and research platform that connects students with opportunities, and created 
-                  <span className="text-green-400 font-semibold"> MyBuddy</span>,
+                  <span className="text-green-400 font-semibold"> MyBuddy</span>, a mental health AI companion that provides emotional support and guidance that won
                   <span className="text-yellow-400 font-semibold"> 2nd place at SerenityHacks</span>. More recently, I published the 
-                  <span className="text-blue-400 font-semibold"> G1 App</span>, a mobile driving test simulator that&apos;s helped over 
+                  <span className="text-blue-400 font-semibold"> G1 App</span>, a mobile driving testing quiz that&apos;s helped over 
                   <span className="text-blue-400 font-semibold"> 500+ users</span> pass their driving tests.
                 </p>
                 <p className="leading-relaxed">
@@ -72,18 +72,16 @@ export default function AboutPage() {
                 <p className="leading-relaxed">
                   When I&apos;m not coding, I&apos;m usually behind a camera! I love capturing moments and stories through a lens — there&apos;s something magical about seeing the world through a different perspective.
                 </p>
+                <div className="mt-6">
+                  <Link 
+                    href="/photos"
+                    className="inline-flex items-center px-6 py-3 rounded-full border border-white bg-black text-white hover:bg-white hover:text-black transition font-semibold"
+                  >
+                    <Camera className="w-5 h-5 mr-2" />
+                    view my photography
+                  </Link>
+                </div>
               </div>
-            </div>
-
-            {/* Personal Philosophy */}
-            <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
-              <p className="leading-relaxed text-center">
-                I love how I get to blend creative and technical problem-solving every day. Whether I&apos;m debugging code, 
-                composing a photo, or strategizing in a game, it all feeds into my goal of building technology that&apos;s both 
-                <span className="text-blue-400 font-semibold"> intelligent</span> and 
-                <span className="text-pink-400 font-semibold"> human-centered</span>. 
-                After all, the best tech doesn&apos;t just work well — it feels right. 🐼✨
-              </p>
             </div>
           </div>
         </div>

@@ -6,12 +6,17 @@ import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from '@/lib/motion'
 import { Menu, X } from 'lucide-react'
 
-export default function MobileNav() {
+interface MobileNavProps {
+  shouldShowIntro?: boolean
+  introStep?: 'hi' | 'welcome' | 'main'
+}
+
+export default function MobileNav({ shouldShowIntro = false, introStep = 'main' }: MobileNavProps) {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
   
-  // Only show on main page, not during intro
-  if (pathname !== '/') {
+  // Only show on main page, and hide during intro
+  if (pathname !== '/' || shouldShowIntro) {
     return null
   }
 
