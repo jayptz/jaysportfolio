@@ -15,8 +15,8 @@ export default function MobileNav({ shouldShowIntro = false, introStep = 'main' 
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
   
-  // Only show on main page, and hide during intro
-  if (pathname !== '/' || shouldShowIntro) {
+  // Only show on main page when intro is complete
+  if (pathname !== '/' || introStep !== 'main') {
     return null
   }
 
