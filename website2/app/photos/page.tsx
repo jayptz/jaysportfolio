@@ -9,14 +9,19 @@ function PhotoGallery() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // For now, we'll use a simple approach to get uploaded photos
-    // In a real app, you'd fetch from a database or API
     const fetchPhotos = async () => {
       try {
-        // This is a placeholder - in production you'd fetch from your backend
-        // For now, we'll show a message that photos will appear here
-        setLoading(false)
+        // Fetch the list of uploaded photos from our API
+        const response = await fetch('/api/photos')
+        if (response.ok) {
+          const data = await response.json()
+          setPhotos(data.photos || [])
+        } else {
+          console.error('Failed to fetch photos')
+        }
       } catch (error) {
+        console.error('Error fetching photos:', error)
+      } finally {
         setLoading(false)
       }
     }
