@@ -1,15 +1,12 @@
+'use client';
 import Link from 'next/link'
 import { ArrowLeft, Camera } from 'lucide-react'
-import { motion } from '@/lib/motion'
+// import { motion } from '@/lib/motion'
 
 export default function PhotosPage() {
   return (
-    <motion.main 
+    <main 
       className="relative min-h-screen bg-black overflow-hidden"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
     >
       <div className="absolute inset-0 flex justify-around opacity-20 -z-10">
         {[...Array(7)].map((_, i) => (
@@ -54,6 +51,6 @@ export default function PhotosPage() {
           </div>
         </div>
       </div>
-    </motion.main>
+    </main>
   )
 } 

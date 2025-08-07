@@ -1,5 +1,5 @@
 'use client'
-import { motion, AnimatePresence} from '@/lib/motion'
+import { motion, AnimatePresence} from 'framer-motion'
 import { useEffect, useState, useMemo } from 'react'
 import { Globe } from "@/components/magicui/globe";
 import PandaDock from './PandaDock'
