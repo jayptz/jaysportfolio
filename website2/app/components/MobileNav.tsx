@@ -30,8 +30,8 @@ export default function MobileNav({ shouldShowIntro = false, introStep = 'main' 
 
   const menuItems = [
     { href: '/projects', label: 'Projects' },
-    { href: '/about', label: 'me' },
-    { href: '/school', label: 'school' },
+    { href: '/about', label: 'Me' },
+    { href: '/school', label: 'School' },
   ]
 
   return (

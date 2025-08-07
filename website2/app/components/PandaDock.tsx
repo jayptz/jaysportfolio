@@ -23,7 +23,7 @@ export default function PandaDock() {
             transition={{ duration: 0.2 }}
           >
             <Link href="/projects" className="text-white text-base font-medium">
-              ProJects
+              projects
             </Link>
           </motion.div>
         </DockIcon>
