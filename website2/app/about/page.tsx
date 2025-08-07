@@ -1,6 +1,8 @@
 import Link from 'next/link'
-import { ArrowLeft, Camera, Gamepad2 } from 'lucide-react'
+import { ArrowLeft, Camera, Gamepad2, Calendar, BookOpen } from 'lucide-react'
 import { motion } from '@/lib/motion'
+import { SpinningText } from '@/components/magicui/spinning-text'
+import Image from 'next/image'
 
 export default function AboutPage() {
   return (
@@ -36,16 +38,6 @@ export default function AboutPage() {
           </h1>
           
           <div className="space-y-8 text-lg text-gray-300">
-            {/* Academic Background */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10">
-              <p className="leading-relaxed">
-                Hey there! I&apos;m <span className="text-white font-semibold">Jay Patel</span>, a Computer Science student at 
-                <span className="text-purple-700 font-semibold"> Wilfrid Laurier University</span> with a passion for AI, 
-                full-stack development, and cloud computing. Currently maintaining a <span className="text-white font-semibold">10.93 GPA</span>, I&apos;m always curious about 
-                how technology can solve real-world problems in creative and meaningful ways.
-              </p>
-            </div>
-
             {/* Key Achievements */}
             <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10">
               <h2 className="text-2xl font-bold text-white mb-4">What I&apos;ve Been Building</h2>
@@ -64,6 +56,75 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
+            {/* Academic Background */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10">
+              <h2 className="text-2xl font-bold text-white mb-4">Academic Journey</h2>
+              <div className="space-y-4">
+                <p className="leading-relaxed">
+                  I&apos;m a third-year <span className="text-white font-bold">Computer Science</span> student at 
+                  <span className="text-purple-700 font-semibold"> Wilfrid Laurier University</span>, where I've built a strong foundation in both practical software development and core computer science theory. My coursework has covered essential areas such as data structures, algorithm analysis, and object-oriented design, giving me the tools to build and scale efficient, maintainable systems.
+                </p>
+                <p className="leading-relaxed">
+                  Outside of class, I've taken initiative to explore areas like AI-powered automation, cloud infrastructure, and human-centered design through hands-on projects, hackathons, and co-op experience. I've developed full-stack web platforms, mobile apps, and real-time analytics tools using Python, JavaScript, C++, and AWS—translating theory into production-level code.
+                </p>
+                <p className="leading-relaxed">
+                  Heading into my third year, I'm excited to deepen my focus in AI, distributed systems, and quantum computing, with a goal of developing tools that push the boundaries of human-computer interaction and ethical technology design.
+                </p>
+              </div>
+            </div>
+
+            {/* Academic Details */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                <h3 className="text-gray-400 text-base lg:text-lg font-semibold mb-4 flex items-center gap-2">
+                  <Calendar className="w-4 h-4 text-white" /> 
+                  Details
+                </h3>
+                <ul className="text-gray-300 text-sm lg:text-base space-y-2 mb-4">
+                  <li>Honours Bachelors of Science</li>
+                  <li>10.93 GPA</li>
+                  <li>Computer Science</li>
+                  <li>September 2023 – Present</li>
+                </ul>
+                <div className="flex justify-start items-center h-24 pl-15 pt-4 relative">
+                  <div className="relative">
+                    <SpinningText 
+                      className="text-white text-sm font-bold"
+                      duration={15}
+                      radius={6}
+                    >
+                     • Wilfrid • Laurier • University 
+                    </SpinningText>
+                                         <div className="absolute inset-0 flex items-center justify-center z-10">
+                       <img 
+                         src="/WilfridLaurierUniversity.jpg" 
+                         alt="Laurier University" 
+                         className="w-8 h-8 rounded-full object-cover"
+                       />
+                     </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                <h3 className="text-gray-400 text-base lg:text-lg font-semibold mb-4 flex items-center gap-2">
+                  <BookOpen className="w-4 h-4 text-white" /> 
+                  Relevant Courses
+                </h3>
+                <ul className="text-gray-300 text-sm lg:text-base space-y-2">
+                  <li>Object-Oriented Programming (CP213) A+</li>
+                  <li>Data Structures I & II (CP164, CP264) A+</li>
+                  <li>Algorithm Design and Analysis (CP312) A</li>
+                  <li>Discrete Structures for Computer Science (CP214) A-</li>
+                  <li>Intro to Microprocessors (CP216) A</li>
+                  <li>Digital Electronics (CP104) A+</li>
+                  <li>Probability & Statistics for Science (ST230) A-</li>
+                  <li>Software Engineering (CP317) A+</li>
+                </ul>
+              </div>
+            </div>
+
+
 
             {/* Creative Interests */}
             <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10">

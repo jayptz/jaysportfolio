@@ -19,12 +19,6 @@ const socialLinks = [
     url: 'https://www.linkedin.com/in/jay-patel-wlu/', 
     color: 'hover:text-blue-300',
   },
-      {
-      name: 'Instagram',
-      icon: 'fab fa-instagram',
-      url: 'https://www.instagram.com/jaypztel/', 
-      color: 'hover:text-pink-400'
-    },
     {
       name: 'Email',
       icon: 'fas fa-envelope',

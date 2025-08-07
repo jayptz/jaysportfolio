@@ -38,8 +38,12 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{ scale: 1.05 }}
-      className="group relative overflow-hidden rounded-xl bg-transparent transition-all duration-300 aspect-square"
+      className="group relative overflow-hidden rounded-xl bg-transparent transition-all duration-50 aspect-square cursor-pointer"
     >
+      {/* Main card link - covers most of the card */}
+      <Link href={`/projects/${project.slug}`} className="absolute inset-0 z-10">
+        <div className="w-full h-full" />
+      </Link>
       {/* Project Image - 60% of card height */}
       <div className="relative h-40 overflow-hidden">
         {project.image ? (
@@ -71,13 +75,14 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
             <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-gray-200 transition-colors duration-300">
               {project.title}
             </h3>
-            <div className="flex items-center gap-1 sm:gap-2">
+            <div className="flex items-center gap-1 sm:gap-2 relative z-20">
               {project.githubUrl && (
                 <Link 
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-1 sm:p-1.5 rounded-lg hover:bg-white/10 transition-colors duration-200 group-hover:scale-110"
+                  className="p-1 sm:p-1.5 rounded-lg hover:bg-white/10 transition-colors duration-100 group-hover:scale-110"
+                  onClick={(e) => e.stopPropagation()}
                 >
                   <Github className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                 </Link>
@@ -87,7 +92,8 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-1 sm:p-1.5 rounded-lg hover:bg-white/10 transition-colors duration-200 group-hover:scale-110"
+                  className="p-1 sm:p-1.5 rounded-lg hover:bg-white/10 transition-colors duration-100 group-hover:scale-110"
+                  onClick={(e) => e.stopPropagation()}
                 >
                   <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
               </Link>
@@ -102,9 +108,12 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
         </div>
 
       {/* Read more button - absolutely positioned at bottom-right of entire card */}
-      <div className="absolute bottom-4 right-4">
+      <div className="absolute bottom-4 right-4 z-20">
         <Link href={`/projects/${project.slug}`}>
-          <button className="flex items-center justify-center w-8 h-8 rounded-lg hover:bg-white/10 text-white transition-colors duration-200 group-hover:scale-105">
+          <button 
+            className="flex items-center justify-center w-8 h-8 rounded-lg hover:bg-white/10 text-white transition-colors duration-100 group-hover:scale-105"
+            onClick={(e) => e.stopPropagation()}
+          >
             <ArrowRight className="w-5 h-5" />
           </button>
         </Link>

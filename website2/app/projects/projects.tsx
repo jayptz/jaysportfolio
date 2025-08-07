@@ -78,6 +78,19 @@ export default function ProjectsPage() {
       </div>
       
       <div className="relative z-10 container mx-auto px-4 py-12">
+        {/* Back Button */}
+        <div className="mb-8">
+          <Link 
+            href="/"
+            className="inline-flex items-center px-4 py-2 rounded-full border border-white bg-black text-white hover:bg-white hover:text-black transition font-semibold"
+          >
+            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            back to home
+          </Link>
+        </div>
+
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-white mb-4">
             panda builds
@@ -85,18 +98,6 @@ export default function ProjectsPage() {
         </div>
 
         <ProjectBentoGrid projects={projects} />
-
-        <div className="text-center mt-12">
-          <Link 
-            href="/"
-            className="inline-flex items-center px-6 py-3 rounded-full border border-white bg-black text-white hover:bg-white hover:text-black transition font-semibold"
-          >
-            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
-            Back to Home
-          </Link>
-        </div>
       </div>
     </main>
   )

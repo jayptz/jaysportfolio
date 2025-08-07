@@ -14,44 +14,42 @@ export default function PandaDock() {
   }
 
   return (
-    <div className="fixed bottom-6 inset-x-0 z-50 flex justify-center hidden md:flex">
-      <Dock className="bg-black/20 border-white/20" iconSize={200} iconMagnification={85}>
-        <DockIcon>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ duration: 0.2 }}
-          >
-            <Link href="/projects" className="text-white text-base font-medium">
-              projects
-            </Link>
-          </motion.div>
-        </DockIcon>
-        
-        <DockIcon>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ duration: 0.2 }}
-          >
-            <Link href="/about" className="text-white text-base font-medium">
-              me
-            </Link>
-          </motion.div>
-        </DockIcon>
-        
-        <DockIcon>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ duration: 0.2 }}
-          >
-            <Link href="/school" className="text-white text-base font-medium">
-              school
-            </Link>
-          </motion.div>
-        </DockIcon>
-      </Dock>
+    <div className="fixed bottom-6 inset-x-0 z-50 flex justify-center gap-50 hidden md:flex">
+      {/* Projects Block */}
+      <motion.div
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        transition={{ duration: 0.2 }}
+        className="bg-black/20 border border-white/20 rounded-2xl px-8 py-4 backdrop-blur-sm"
+      >
+        <Link href="/projects" className="text-white text-base font-medium">
+          projects
+        </Link>
+      </motion.div>
+      
+      {/* Me Block */}
+      <motion.div
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        transition={{ duration: 0.2 }}
+        className="bg-black/20 border border-white/20 rounded-2xl px-8 py-4 backdrop-blur-sm"
+      >
+        <Link href="/about" className="text-white text-base font-medium">
+          me
+        </Link>
+      </motion.div>
+      
+      {/* Experience Block */}
+      <motion.div
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        transition={{ duration: 0.2 }}
+        className="bg-black/20 border border-white/20 rounded-2xl px-8 py-4 backdrop-blur-sm"
+      >
+        <Link href="/experience" className="text-white text-base font-medium">
+          experience
+        </Link>
+      </motion.div>
     </div>
   )
 } 
