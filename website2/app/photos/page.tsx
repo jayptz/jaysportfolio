@@ -3,6 +3,8 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
+import { ArrowLeft } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 
 // Actual photos from uploads folder
 const photos = [
@@ -26,6 +28,7 @@ const photos = [
 
 export default function PhotosPage() {
   const [selectedPhoto, setSelectedPhoto] = useState<typeof photos[0] | null>(null)
+  const router = useRouter()
 
   const handlePhotoClick = (photo: typeof photos[0]) => {
     setSelectedPhoto(photo)
@@ -35,9 +38,29 @@ export default function PhotosPage() {
     setSelectedPhoto(null)
   }
 
+  const handleBack = () => {
+    router.back()
+  }
+
   return (
     <div className="min-h-screen bg-black">
       <div className="container mx-auto px-4 py-8">
+        {/* Back Button */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-6"
+        >
+          <button
+            onClick={handleBack}
+            className="flex items-center gap-2 text-white hover:text-gray-300 transition-colors duration-200 group"
+          >
+            <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-200" />
+            <span className="text-lg font-medium">Back</span>
+          </button>
+        </motion.div>
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
