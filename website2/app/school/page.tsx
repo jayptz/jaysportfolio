@@ -54,7 +54,7 @@ export default function SchoolPage() {
               alt="Wilfrid Laurier University Campus" 
             />
           </div>
-        <div className="text-center mb-12">
+        <div className="text-ce.nter mb-12">
           <h1 className="text-5xl font-bold text-purple-700 mb-4">
             Wilfrid Laurier University
           </h1>
