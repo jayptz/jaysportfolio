@@ -7,11 +7,15 @@ export function SmoothCursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    if (isTouchDevice) {
+    const isMobileDevice = window.innerWidth <= 768;
+    
+    if (isTouchDevice || isMobileDevice) {
+      setIsMobile(true);
       document.body.classList.add('touch-device');
       return; // Don't add custom cursor on touch devices
     }
@@ -60,6 +64,11 @@ export function SmoothCursor() {
       });
     };
   }, [pathname]);
+
+  // Don't render cursor elements on mobile devices
+  if (isMobile) {
+    return null;
+  }
 
   return (
     <>
