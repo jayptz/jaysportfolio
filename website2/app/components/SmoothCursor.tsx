@@ -73,7 +73,7 @@ export function SmoothCursor() {
   return (
     <>
       <div
-        className={`hover:block custom-cursor-dot fixed top-0 left-0 w-3 h-3 rounded-full bg-white pointer-events-none z-50 transition-all duration-300 ease-out`}
+        className={`hover:block custom-cursor-dot fixed top-0 left-0 w-3 h-3 rounded-full bg-white pointer-events-none z-[10000] transition-all duration-300 ease-out`}
         style={{
           transform: `translate(${mousePosition.x - 6}px, ${mousePosition.y - 6}px) scale(${isHovering ? 2.5 : 1})`,
           mixBlendMode: "difference",
@@ -82,7 +82,7 @@ export function SmoothCursor() {
       />
 
       <div
-        className={`hover:block custom-cursor-outline fixed top-0 left-0 w-7 h-7 border rounded-full pointer-events-none z-50 transition-opacity duration-300`}
+        className={`hover:block custom-cursor-outline fixed top-0 left-0 w-7 h-7 border rounded-full pointer-events-none z-[10000] transition-opacity duration-300`}
         style={{
           transform: `translate(${mousePosition.x - 14}px, ${mousePosition.y - 14}px) scale(${isHovering ? 1.5 : 1})`,
           opacity: isVisible ? 1 : 0,

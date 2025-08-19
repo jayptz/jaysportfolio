@@ -57,6 +57,15 @@ const photos = [
   { id: 47, src: '/uploads/IMG_0939.jpg', alt: 'Street Scene' },
   { id: 48, src: '/uploads/6F7B96E6-4888-48C5-933F-EDDD5E843BD5.JPG', alt: 'Urban Landscape' },
   { id: 49, src: '/uploads/BCCF24BD-DC7D-4C14-94E9-14190E4D88B3.JPG', alt: 'City Photography' },
+  { id: 50, src: '/uploads/IMG_9913.jpeg', alt: 'Urban Photography' },
+  { id: 51, src: '/uploads/IMG_1412.jpeg', alt: 'Street Photography' },
+  { id: 52, src: '/uploads/IMG_9934.jpeg', alt: 'City Life' },
+  { id: 53, src: '/uploads/IMG_9936.jpeg', alt: 'Urban Architecture' },
+  { id: 54, src: '/uploads/IMG_9951.jpeg', alt: 'Street Scene' },
+  { id: 55, src: '/uploads/IMG_9988.jpeg', alt: 'City Photography' },
+  { id: 56, src: '/uploads/IMG_6643.jpeg', alt: 'Urban Landscape' },
+  { id: 57, src: '/uploads/IMG_6634.jpeg', alt: 'Street Art' },
+  { id: 58, src: '/uploads/IMG_4631.jpeg', alt: 'City Streets' },
 ]
 
 export default function PhotosPage() {
@@ -173,7 +182,7 @@ export default function PhotosPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+            className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm cursor-pointer"
             onClick={closeModal}
           >
             <motion.div
@@ -181,19 +190,19 @@ export default function PhotosPage() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative max-w-4xl max-h-[90vh] w-full"
+              className="relative max-w-4xl max-h-[90vh] w-full cursor-default"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close button */}
               <button
                 onClick={closeModal}
-                className="absolute -top-4 -right-4 z-10 w-10 h-10 bg-gray-800 hover:bg-gray-700 text-white rounded-full flex items-center justify-center transition-colors duration-200 shadow-lg"
+                className="absolute -top-4 -right-4 z-10 w-10 h-10 bg-gray-800 hover:bg-gray-700 text-white rounded-full flex items-center justify-center transition-colors duration-200 shadow-lg cursor-pointer"
               >
                 ✕
               </button>
               
               {/* Image container */}
-              <div className="relative aspect-video w-full rounded-xl overflow-hidden shadow-2xl">
+              <div className="relative aspect-video w-full rounded-xl overflow-hidden shadow-2xl cursor-default">
                 <Image
                   src={selectedPhoto.src}
                   alt={selectedPhoto.alt}
