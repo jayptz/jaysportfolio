@@ -1,6 +1,6 @@
 'use client'
-import { motion, AnimatePresence} from 'framer-motion'
-import { useEffect, useState, useMemo } from 'react'
+import { motion } from 'framer-motion'
+import { useMemo } from 'react'
 import { Globe } from "@/components/magicui/globe";
 import HamburgerMenu from './HamburgerMenu'
 import SolarSystem from './SolarSystem'
@@ -10,8 +10,6 @@ import MobileNav from './MobileNav'
 
 
 export default function Landing() {
-  const [introStep, setIntroStep] = useState<'hi' | 'welcome' | 'main'>('hi')
-  const [shouldShowIntro, setShouldShowIntro] = useState(true)
   const pandaGif = useMemo(() => {
     const gifs = [
       '/panda.gif',
@@ -22,31 +20,6 @@ export default function Landing() {
     ]
     const index = Math.floor(Math.random() * gifs.length)
     return gifs[index]
-  }, [])
-  useEffect(() => {
-    // Check if intro has been seen in this session (client-side only)
-    const hasSeenIntro = typeof window !== 'undefined' && sessionStorage.getItem('introSeen') === 'true'
-    
-    if (hasSeenIntro) {
-      // Skip intro, go directly to main content
-      setShouldShowIntro(false)
-      setIntroStep('main')
-      return
-    }
-
-    // First time visit - mark as seen and run intro sequence
-    if (typeof window !== 'undefined') {
-      sessionStorage.setItem('introSeen', 'true')
-    }
-    
-    setShouldShowIntro(true)
-    const hiTimer = setTimeout(() => setIntroStep('welcome'), 2500) 
-    const welcomeTimer = setTimeout(() => setIntroStep('main'), 7500) 
-
-    return () => {
-      clearTimeout(hiTimer)
-      clearTimeout(welcomeTimer)
-    }
   }, [])
 
 
@@ -69,55 +42,12 @@ export default function Landing() {
         ))}
       </div>
 
-      <AnimatePresence mode="wait">
-        {shouldShowIntro && introStep === 'hi' && (
-          <motion.div
-            key="hi"
-            className="text-center z-10"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
-          >
-            <h1 className="text-5xl font-extrabold text-white">hi there!</h1>
-          </motion.div>
-        )}
-
-        {shouldShowIntro && introStep === 'welcome' && (
-          <motion.div
-            key="welcome"
-            className="relative text-center z-10"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
-            
-          >
-            <motion.div 
-            className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.7 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 2 }}
-              >
-            <div className="relative w-[min(90vw,600px)] h-[min(70vh,600px)] md:w-[min(80vw,600px)] md:h-[min(80vh,600px)] flex items-center justify-center">
-              <Globe className="!relative !w-full !h-full !max-w-none text-gray-300" />
-            </div>
-            </motion.div>
-            <h2 className="text-3xl font-bold text-white">welcome to Jay&apos;s world</h2>
-          </motion.div>
-
-        )}
-        
-
-        {introStep === 'main' && (
-          <motion.div
-            key="main"
-            className="w-full h-full relative z-10"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
+      <motion.div
+        className="w-full h-full relative z-10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
             {/* Welcome text and panda */}
             <div className="flex flex-col items-center justify-center h-full">
               <h1 className="mb-4 text-3xl font-bold text-white z-10">
@@ -141,10 +71,6 @@ export default function Landing() {
               <SocialLinks />
             </div>
           </motion.div>
-        )}
-
-
-      </AnimatePresence>
     </main>
   )
 }
