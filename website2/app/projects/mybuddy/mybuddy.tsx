@@ -64,7 +64,7 @@ export default function MyBuddyPage() {
           <div className="mb-8">
             <div className="w-full h-64 bg-gradient-to-br from-gray-800 to-black rounded-xl flex items-center justify-center">
               <div className="text-white text-4xl font-bold opacity-20">
-                M
+                MyBuddy
               </div>
             </div>
           </div>

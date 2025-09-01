@@ -1,15 +1,15 @@
 import Link from 'next/link'
 import { Github, ArrowLeft } from 'lucide-react'
 import { Metadata } from 'next'
-import MyBuddyTechStack from '../../components/MyBuddyTechStack'
+import OrbitShareTechStack from '../../components/OrbitShareTechStack'
 
 export const metadata: Metadata = {
-  title: 'My Buddy | Jay&apos;s Projects',
-  description: 'GPT integrated personal mental-health assistant',
-  keywords: ['AI', 'mental health', 'GPT', 'voice recognition', 'assistant', 'therapy'],
+  title: 'OrbitShare | Jay\'s Projects',
+  description: 'OrbitShare is a tiny desktop tool that makes screen sharing + switching between monitors instant with seamless monitor switching capabilities.',
+  keywords: ['desktop tool', 'screen sharing', 'monitor switching', 'electron', 'react', 'typescript', 'desktop app'],
 }
 
-export default function MyBuddyPage() {
+export default function OrbitSharePage() {
   return (
     <main className="relative min-h-screen bg-black">
       {/* Bamboo stalks background */}
@@ -38,16 +38,16 @@ export default function MyBuddyPage() {
         {/* Project Header */}
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-white mb-4">
-            MyBuddy
+            OrbitShare
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-6">
-            GPT integrated personal mental-health assistant that provides conversational support and guidance.
+            OrbitShare (aka your OrbitFlow MVP) is a tiny desktop tool that makes screen sharing + switching between monitors instant. Seamless monitor switching with minimal permissions UX.
           </p>
           
           {/* Project Links */}
           <div className="flex justify-center gap-4 mb-8">
             <Link 
-              href="https://github.com/jayptz/MyBuddy"
+              href="https://github.com/jayptz/OrbitShare"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-4 py-2 rounded-lg bg-gray-100 text-black hover:bg-gray-200 transition"
@@ -62,9 +62,9 @@ export default function MyBuddyPage() {
         <div className="max-w-4xl mx-auto">
           {/* Project Image/Demo */}
           <div className="mb-8">
-            <div className="w-full h-64 bg-gradient-to-br from-blue-800 to-purple-900 rounded-xl flex items-center justify-center">
+            <div className="w-full h-64 bg-gradient-to-br from-gray-800 to-black rounded-xl flex items-center justify-center">
               <div className="text-white text-4xl font-bold opacity-20">
-                🧠
+                OribitShare
               </div>
             </div>
           </div>
@@ -74,10 +74,10 @@ export default function MyBuddyPage() {
             <div>
               <h2 className="text-2xl font-bold text-white mb-4">About This Project</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                MyBuddy is an AI-powered mental health assistant that combines voice recognition technology with GPT-3.5 to provide personalized conversational support. The application offers a safe, judgment-free environment for users to discuss their thoughts and feelings.
+                OrbitShare is a desktop tool designed to solve the pain point of switching between monitors during screen sharing. It lives as a menu-bar/tray icon for quick picking, provides global hotkeys to flip between monitors, and shows a preview window of what's being shared.
               </p>
               <p className="text-gray-300 leading-relaxed mb-4">
-                The system processes natural speech through Google&apos;s Speech-to-Text API, analyzes the content using OpenAI&apos;s GPT-3.5, and provides empathetic responses and guidance. This creates a unique therapeutic experience that&apos;s accessible anytime, anywhere.
+                The tool focuses on seamless monitor switching without the need to stop and re-share, making it perfect for developers, presenters, and anyone who frequently switches between multiple monitors during screen sharing sessions.
               </p>
             </div>
 
@@ -86,36 +86,36 @@ export default function MyBuddyPage() {
               <ul className="space-y-2 text-gray-300">
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Voice-to-text conversation interface
+                  Menu-bar/tray icon for quick monitor selection
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  AI-powered empathetic responses
+                  Global hotkeys for instant monitor switching
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Real-time speech processing
+                  Preview window showing what's being shared
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Personalized conversation history
+                  Seamless switching without stop/re-share
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Mental health guidance and support
+                  Minimal permissions UX (especially for macOS)
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Secure and private conversations
+                  List all monitors with thumbnails
                 </li>
               </ul>
             </div>
           </div>
 
           {/* Technology Stack with Orbiting Circles */}
-          <div className="mt-16">
-            <div className="relative h-96 flex items-center justify-center">
-              <MyBuddyTechStack />
+          <div className="mt-16 mb-32">
+            <div className="relative h-[600px] flex items-center justify-center">
+              <OrbitShareTechStack />
             </div>
           </div>
         </div>
