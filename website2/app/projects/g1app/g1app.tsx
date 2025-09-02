@@ -122,7 +122,7 @@ export default function G1AppPage() {
           <div className="mt-12 text-center">
               <div className="flex items-center justify-center gap-2">
                 <NumberTicker 
-                  value={500} 
+                  value={1000} 
                   className="text-4xl font-bold text-white"
                 />
                 <span className="text-4xl font-bold text-white">+ downloads</span>
