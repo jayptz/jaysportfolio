@@ -87,7 +87,7 @@ export default function AboutPage() {
                   <li>September 2023 – Present</li>
                 </ul>
                 <div className="flex justify-start items-center h-24 pl-15 pt-4 relative">
-                  <div className="relative">
+                  <div className="absolute-bottom">
                     <SpinningText 
                       className="text-white text-sm font-bold"
                       duration={15}
@@ -119,9 +119,12 @@ export default function AboutPage() {
                   <li>Algorithm Design and Analysis (CP312) A</li>
                   <li>Discrete Structures for Computer Science (CP214) A-</li>
                   <li>Intro to Microprocessors (CP216) A</li>
-                  <li>Digital Electronics (CP104) A+</li>
+                  <li>Digital Electronics (CP220) A+</li>
                   <li>Probability & Statistics for Science (ST230) A-</li>
                   <li>Software Engineering (CP317) A+</li>
+                  <li>Artificial Intelligence (CP468) Current </li>
+                  <li>Machine Learning (CP322) Current </li>
+                  <li>Databases I (CP363)Current </li>
                 </ul>
               </div>
             </div>
