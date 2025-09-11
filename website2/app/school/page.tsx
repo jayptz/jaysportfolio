@@ -110,6 +110,9 @@ export default function SchoolPage() {
                 <li>Digital Electronics (CP104) A+</li>
                 <li>Probability & Statistics for Science (ST230) A-</li>
                 <li>Software Engineering (CP317) A+</li>
+                <li>Artificial Intelligence (CP468) Current </li>
+                <li>Machine Learning (CP322) Current </li>
+                <li>Databases I (CP363)Current </li>
               </ul>
             </div>
           </div>
