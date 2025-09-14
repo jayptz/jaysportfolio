@@ -48,11 +48,10 @@ export default function AboutPage() {
                   <span className="text-green-400 font-semibold"> MyBuddy</span>, a mental health AI companion that provides emotional support and guidance that won
                   <span className="text-yellow-400 font-semibold"> 2nd place at SerenityHacks</span>. More recently, I published the 
                   <span className="text-blue-400 font-semibold"> G1 App</span>, a mobile driving testing quiz that&apos;s helped over 
-                  <span className="text-blue-400 font-semibold"> 500+ users</span> pass their driving tests.
+                  <span className="text-blue-400 font-semibold"> 1000+ users</span> pass their driving tests.
                 </p>
                 <p className="leading-relaxed">
-                  I&apos;m also working as an AI code reviewer at <span className="text-white-400 font-bold"> Outlier AI</span>, 
-                  where I get to dive deep into code quality and help shape the future of AI-assisted development.
+                  I&apos;m also working as a Full-Stack Developer at <span className="text-white-400 font-bold"> ResDex</span>.
                 </p>
               </div>
             </div>
@@ -75,40 +74,48 @@ export default function AboutPage() {
 
             {/* Academic Details */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                <h3 className="text-gray-400 text-base lg:text-lg font-semibold mb-4 flex items-center gap-2">
-                  <Calendar className="w-4 h-4 text-white" /> 
-                  Details
-                </h3>
-                <ul className="text-gray-300 text-sm lg:text-base space-y-2 mb-4">
-                  <li>Honours Bachelors of Science</li>
-                  <li>3.89 GPA</li>
-                  <li>Computer Science</li>
-                  <li>September 2023 – Present</li>
-                </ul>
-                <div className="flex justify-start items-center h-24 pl-15 pt-4 relative">
-                  <div className="absolute-bottom">
-                    <SpinningText 
-                      className="text-white text-sm font-bold"
-                      duration={15}
-                      radius={6}
-                    >
-                     • Wilfrid • Laurier • University 
-                    </SpinningText>
-                                         <div className="absolute inset-0 flex items-center justify-center z-10">
-                       <Image 
-                         src="/WilfridLaurierUniversity.jpg" 
-                         alt="Laurier University" 
-                         width={32}
-                         height={32}
-                         className="rounded-full object-cover"
-                       />
-                     </div>
+              <div className="lg:col-span-1">
+                <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 lg:p-4 border border-white/10 relative lg:h-48">
+                  <h3 className="text-gray-400 text-base lg:text-lg font-semibold mb-4 flex items-center gap-2">
+                    <Calendar className="w-4 h-4 text-white" /> 
+                    Details
+                  </h3>
+                  <ul className="text-gray-300 text-sm lg:text-base space-y-2">
+                    <li>Honours Bachelors of Science</li>
+                    <li>3.89 GPA</li>
+                    <li>Computer Science</li>
+                    <li>September 2023 – Present</li>
+                  </ul>
+                  
+                  {/* Spinning Text in top right of Details box */}
+                  <div className="absolute top-30 right-18">
+                    <div className="relative">
+                      <SpinningText 
+                        className="text-white text-sm font-bold"
+                        duration={15}
+                        radius={6}
+                      >
+                       • Wilfrid • Laurier • University 
+                      </SpinningText>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* picture box*/}
+                <div className="hidden lg:block mt-4">
+                  <div className="bg-white/5 backdrop-blur-sm rounded-xl p-2 lg:p-6 border border-white/10 overflow-hidden">
+                    <Image 
+                      src="/WilfridLaurierUniversity.jpg" 
+                      alt="Wilfrid Laurier University Campus" 
+                      width={600}
+                      height={300}
+                      className="w-full h-full object-cover rounded-lg"
+                    />
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 lg:p-6 border border-white/10">
                 <h3 className="text-gray-400 text-base lg:text-lg font-semibold mb-4 flex items-center gap-2">
                   <BookOpen className="w-4 h-4 text-white" /> 
                   Relevant Courses
