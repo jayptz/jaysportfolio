@@ -50,9 +50,6 @@ export default function AboutPage() {
                   <span className="text-blue-400 font-semibold"> G1 App</span>, a mobile driving testing quiz that&apos;s helped over 
                   <span className="text-blue-400 font-semibold"> 1000+ users</span> pass their driving tests.
                 </p>
-                <p className="leading-relaxed">
-                  I&apos;m also working as a Full-Stack Developer at <span className="text-white-400 font-bold"> ResDex</span>.
-                </p>
               </div>
             </div>
             {/* Academic Background */}
