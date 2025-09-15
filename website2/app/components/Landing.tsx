@@ -10,17 +10,14 @@ import MobileNav from './MobileNav'
 
 
 export default function Landing() {
-  const pandaGif = useMemo(() => {
-    const gifs = [
-      '/panda.gif',
-      '/panda2.gif',
-      '/panda3.gif',
-      '/panda4.gif',
-      '/panda5.gif',
-    ]
-    const index = Math.floor(Math.random() * gifs.length)
-    return gifs[index]
-  }, [])
+  const gifs = [
+    '/panda.gif',
+    '/panda2.gif',
+    '/panda3.gif',
+    '/panda4.gif',
+    '/panda5.gif',
+  ]
+  const pandaGif = gifs[Math.floor(Math.random() * gifs.length)]
 
 
   return (
