@@ -1,6 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
-import { useMemo } from 'react'
+import { useState, useEffect } from 'react'
 import { Globe } from "@/components/magicui/globe";
 import HamburgerMenu from './HamburgerMenu'
 import SolarSystem from './SolarSystem'
@@ -10,14 +10,19 @@ import MobileNav from './MobileNav'
 
 
 export default function Landing() {
-  const gifs = [
-    '/panda.gif',
-    '/panda2.gif',
-    '/panda3.gif',
-    '/panda4.gif',
-    '/panda5.gif',
-  ]
-  const pandaGif = gifs[Math.floor(Math.random() * gifs.length)]
+  const [pandaGif, setPandaGif] = useState('/panda.gif')
+  
+  useEffect(() => {
+    const gifs = [
+      '/panda.gif',
+      '/panda2.gif',
+      '/panda3.gif',
+      '/panda4.gif',
+      '/panda5.gif',
+    ]
+    const randomGif = gifs[Math.floor(Math.random() * gifs.length)]
+    setPandaGif(randomGif)
+  }, [])
 
 
   return (
