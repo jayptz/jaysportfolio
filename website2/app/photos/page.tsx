@@ -69,7 +69,7 @@ const photos = [
   { id: 59, src: '/uploads/IMG_1327.jpeg', alt: 'City Streets' },
   { id: 60, src: '/uploads/IMG_2941.jpeg', alt: 'City Streets' },
   { id: 61, src: '/uploads/IMG_2949.jpeg', alt: 'City Streets' },
-  { id: 63, src: '/uploads/IMG_3150.jpeg', alt: 'City Streets' },
+  { id: 62, src: '/uploads/IMG_3150.jpeg', alt: 'City Streets' },
 ]
 
 export default function PhotosPage() {
