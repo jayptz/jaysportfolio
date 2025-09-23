@@ -9,7 +9,7 @@ const projects = [
     image: '',
     imagePosition: '',
     githubUrl: 'https://github.com/jayptz/OrbitShare',
-    liveUrl: '',
+    liveUrl: 'https://orbitshare.vercel.app/',
     slug: 'orbitshare'
   },
   {

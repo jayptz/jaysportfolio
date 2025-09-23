@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Github, ArrowLeft } from 'lucide-react'
+import { Github, ArrowLeft, ExternalLink } from 'lucide-react'
 import { Metadata } from 'next'
 import OrbitShareTechStack from '../../components/OrbitShareTechStack'
 
@@ -54,6 +54,15 @@ export default function OrbitSharePage() {
             >
               <Github className="w-4 h-4 mr-2" />
               View on GitHub
+            </Link>
+            <Link 
+              href="https://orbitshare.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-4 py-2 rounded-lg bg-white text-black hover:bg-gray-100 transition"
+            >
+              <ExternalLink className="w-4 h-4 mr-2" />
+              OrbitShare            
             </Link>
           </div>
         </div>
