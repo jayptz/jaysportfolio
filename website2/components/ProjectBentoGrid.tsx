@@ -23,15 +23,6 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ project, index }: ProjectCardProps) => {
-  const gradients = [
-    'from-gray-400 to-gray-600',
-    'from-gray-500 to-gray-700',
-    'from-gray-600 to-gray-800',
-    'from-gray-700 to-gray-900',
-    'from-gray-800 to-black'
-  ]
-  const gradientIndex = project.title.length % gradients.length
-  const gradient = gradients[gradientIndex]
 
   const getCategoryColor = (category: string) => {
     switch (category) {
