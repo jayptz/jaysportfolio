@@ -1,5 +1,8 @@
+'use client'
+
 import Link from 'next/link'
 import ProjectBentoGrid from '@/components/ProjectBentoGrid'
+import { useState } from 'react'
 
 const projects = [
   {
@@ -10,7 +13,8 @@ const projects = [
     imagePosition: '',
     githubUrl: 'https://github.com/jayptz/OrbitShare',
     liveUrl: 'https://orbitshare.vercel.app/',
-    slug: 'orbitshare'
+    slug: 'orbitshare',
+    category: 'Full-Stack'
   },
   {
     id: '2',
@@ -20,7 +24,8 @@ const projects = [
     imagePosition: 'object-center',
     githubUrl: 'https://github.com/devp19/ResDex',
     liveUrl: 'https://www.resdex.ca/',
-    slug: 'resdex'
+    slug: 'resdex',
+    category: 'Research'
   },
   {
     id: '3',
@@ -30,7 +35,8 @@ const projects = [
     imagePosition: '',
     githubUrl: 'https://github.com/jayptz/GroundLink',
     liveUrl: '',
-    slug: 'groundlink'
+    slug: 'groundlink',
+    category: 'Full-Stack'
   },
   {
     id: '4',
@@ -40,7 +46,8 @@ const projects = [
     imagePosition: '',
     githubUrl: 'https://github.com/jayptz/ScoreWise',
     liveUrl: '',
-    slug: 'scorewise'
+    slug: 'scorewise',
+    category: 'ML'
   },
   {
     id: '5',
@@ -50,7 +57,8 @@ const projects = [
     imagePosition: 'object-center',
     githubUrl: '',
     liveUrl: 'https://play.google.com/store/apps/details?id=com.smitpatel.g1app&pli=1',
-    slug: 'g1app'
+    slug: 'g1app',
+    category: 'Full-Stack'
   },
   {
     id: '6',
@@ -60,7 +68,8 @@ const projects = [
     imagePosition: '',
     githubUrl: 'https://github.com/jayptz/NEAR-Fantasy',
     liveUrl: '',
-    slug: 'Near-Fantasy'
+    slug: 'Near-Fantasy',
+    category: 'Full-Stack'
   },
   {
     id: '7',
@@ -70,11 +79,20 @@ const projects = [
     imagePosition: 'object-center',
     githubUrl: 'https://github.com/jayptz/MyBuddy',
     liveUrl: '',
-    slug: 'mybuddy'
+    slug: 'mybuddy',
+    category: 'AI'
   }
 ]
 
+const categories = ['All', 'AI', 'ML', 'Full-Stack', 'Research']
+
 export default function ProjectsPage() {
+  const [selectedCategory, setSelectedCategory] = useState('All')
+  
+  const filteredProjects = selectedCategory === 'All' 
+    ? projects 
+    : projects.filter(project => project.category === selectedCategory)
+
   return (
     <main className="relative min-h-screen bg-black">
       <div className="absolute inset-0 flex justify-around opacity-20 -z-10">
@@ -105,9 +123,26 @@ export default function ProjectsPage() {
           <h1 className="text-5xl font-bold text-white mb-4">
             panda builds
           </h1>
+          
+          {/* Category Filter */}
+          <div className="flex flex-wrap justify-center gap-2 mb-6">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                  selectedCategory === category
+                    ? 'bg-white text-black'
+                    : 'border border-white/30 text-white hover:border-white hover:bg-white/10'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <ProjectBentoGrid projects={projects} />
+        <ProjectBentoGrid projects={filteredProjects} />
       </div>
     </main>
   )
