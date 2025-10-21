@@ -14,7 +14,7 @@ interface Project {
   githubUrl?: string
   liveUrl?: string
   slug: string
-  category: string
+  category: string | string[]
 }
 
 interface ProjectCardProps {
@@ -27,15 +27,15 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
   const getCategoryColor = (category: string) => {
     switch (category) {
       case 'AI':
-        return 'bg-purple-500/20 text-purple-300 border-purple-500/30'
+        return 'bg-black-500/30 text-white border-gray-500-500/30'
       case 'ML':
-        return 'bg-blue-500/20 text-blue-300 border-blue-500/30'
+        return 'bg-black-500/30 text-white border-gray-500-500/30'
       case 'Full-Stack':
-        return 'bg-green-500/20 text-green-300 border-green-500/30'
+        return 'bg-black-500/30 text-white border-gray-500-500/30'
       case 'Research':
-        return 'bg-orange-500/20 text-orange-300 border-orange-500/30'
+        return 'bg-black-500/30 text-white border-gray-500-500/30'
       default:
-        return 'bg-gray-500/20 text-gray-300 border-gray-500/30'
+        return 'bg-black-500/30 text-white border-gray-500-500/30'
     }
   }
 
@@ -77,11 +77,13 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 
               {/* Project Content - 40% of card height */}
         <div className="relative p-4 sm:p-6 h-2/5">
-          {/* Category Badge */}
-          <div className="mb-2">
-            <span className={`inline-block px-2 py-1 rounded-full text-xs font-medium border ${getCategoryColor(project.category)}`}>
-              {project.category}
-            </span>
+          {/* Category Badge(s) */}
+          <div className="mb-2 flex flex-wrap gap-1">
+            {(Array.isArray(project.category) ? project.category : [project.category]).map((cat, index) => (
+              <span key={index} className={`inline-block px-2 py-1 rounded-full text-xs font-medium border ${getCategoryColor(cat)}`}>
+                {cat}
+              </span>
+            ))}
           </div>
           
           {/* Title with icons on the right */}

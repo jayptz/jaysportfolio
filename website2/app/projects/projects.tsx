@@ -4,7 +4,19 @@ import Link from 'next/link'
 import ProjectBentoGrid from '@/components/ProjectBentoGrid'
 import { useState } from 'react'
 
-const projects = [
+interface Project {
+  id: string
+  title: string
+  description: string
+  image: string
+  imagePosition: string
+  githubUrl: string
+  liveUrl: string
+  slug: string
+  category: string | string[]
+}
+
+const projects: Project[] = [
   {
     id: '1',
     title: 'OrbitShare',
@@ -36,7 +48,7 @@ const projects = [
     githubUrl: 'https://github.com/jayptz/GroundLink',
     liveUrl: '',
     slug: 'groundlink',
-    category: 'Full-Stack'
+    category: ['Full-Stack', 'AI']
   },
   {
     id: '4',
@@ -80,7 +92,7 @@ const projects = [
     githubUrl: 'https://github.com/jayptz/MyBuddy',
     liveUrl: '',
     slug: 'mybuddy',
-    category: 'AI'
+    category: ['Full-Stack', 'AI']
   }
 ]
 
@@ -91,7 +103,12 @@ export default function ProjectsPage() {
   
   const filteredProjects = selectedCategory === 'All' 
     ? projects 
-    : projects.filter(project => project.category === selectedCategory)
+    : projects.filter(project => {
+        if (Array.isArray(project.category)) {
+          return project.category.includes(selectedCategory)
+        }
+        return project.category === selectedCategory
+      })
 
   return (
     <main className="relative min-h-screen bg-black">
@@ -123,6 +140,9 @@ export default function ProjectsPage() {
           <h1 className="text-5xl font-bold text-white mb-4">
             panda builds
           </h1>
+          <h2 className="text-1xl font Bold text-gray-500 mb-4">
+            An insight to my work and innovation.
+          </h2>
           
           {/* Category Filter */}
           <div className="flex flex-wrap justify-center gap-2 mb-6">
