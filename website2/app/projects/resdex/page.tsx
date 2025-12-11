@@ -38,9 +38,18 @@ export default function ResDexPage() {
 
         {/* Project Header */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-white mb-4">
-            ResDex
-          </h1>
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <h1 className="text-5xl font-bold text-white">
+              ResDex
+            </h1>
+            <div className="flex items-center gap-2 ml-1 mt-4">
+              <div className="relative">
+                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                <div className="absolute top-0 left-0 w-2 h-2 bg-green-500 rounded-full animate-ping"></div>
+              </div>
+              <span className="text-xs text-gray-400">Completed</span>
+            </div>
+          </div>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-6">
             A comprehensive mentorship and research platform that connects students with opportunities. Built with modern web technologies to facilitate meaningful connections between aspiring researchers and experienced mentors.
           </p>

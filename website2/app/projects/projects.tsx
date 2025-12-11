@@ -4,20 +4,55 @@ import Link from 'next/link'
 import ProjectBentoGrid from '@/components/ProjectBentoGrid'
 import { useState } from 'react'
 
-const projects = [
+interface Project {
+  id: string
+  title: string
+  description: string
+  image: string
+  imagePosition: string
+  githubUrl: string
+  liveUrl: string
+  slug: string
+  category: string | string[]
+}
+
+const projects: Project[] = [
   {
-    id: '1',
-    title: 'OrbitShare',
-    description: 'OrbitShare is a decentralized file sharing platform built on blockchain technology for secure, peer-to-peer file distribution.',
+    id: '9',
+    title: 'Fleet',
+    description: 'FleetIQ is a real-time map that uses live data and machine learning to predict and visualize traffic congestion.',
     image: '',
     imagePosition: '',
+    githubUrl: 'https://github.com/jayptz/Fleet',
+    liveUrl: '',
+    slug: 'Fleet',
+    category: ['ML', 'Full-Stack']
+  },
+  {
+    id: '8',
+    title: 'Photobooth',
+    description: 'Portable Photobooth for functions.',
+    image: '',
+    imagePosition: '',
+    githubUrl: 'https://github.com/jayptz/Photobooth',
+    liveUrl: '',
+    slug: 'photobooth',
+    category: 'Full-Stack'
+  },
+
+  {
+    id: '7',
+    title: 'OrbitShare',
+    description: 'OrbitShare is a decentralized file sharing platform built on blockchain technology for secure, peer-to-peer file distribution.',
+    image: '/OrbitShare.png',
+    imagePosition: 'object-center',
     githubUrl: 'https://github.com/jayptz/OrbitShare',
     liveUrl: 'https://orbitshare.vercel.app/',
     slug: 'orbitshare',
     category: 'Full-Stack'
   },
   {
-    id: '2',
+    id: '6',
     title: 'ResDex',
     description: 'A comprehensive mentorship and research platform that connects students with opportunities. Built with React, Node.js, and PostgreSQL.',
     image: '/resdex.jpeg',
@@ -28,7 +63,7 @@ const projects = [
     category: 'Research'
   },
   {
-    id: '3',
+    id: '5',
     title: 'GroundLink',
     description: 'GroundLink is a real-time dashboard for managing and tracking fieldwork through live maps and mobile task updates.',
     image: '',
@@ -36,7 +71,7 @@ const projects = [
     githubUrl: 'https://github.com/jayptz/GroundLink',
     liveUrl: '',
     slug: 'groundlink',
-    category: 'Full-Stack'
+    category: ['Full-Stack', 'AI']
   },
   {
     id: '4',
@@ -50,7 +85,7 @@ const projects = [
     category: 'ML'
   },
   {
-    id: '5',
+    id: '3',
     title: 'G1 App',
     description: 'A mobile app that helps Ontario drivers study for the G1 test. Features flashcards, randomized quizzes, and a clean user-friendly interface.',
     image: '/G1.webp',
@@ -61,7 +96,7 @@ const projects = [
     category: 'Full-Stack'
   },
   {
-    id: '6',
+    id: '2',
     title: 'Near Fantasy',
     description: 'A blockchain-based fantasy app built on NEAR Protocol. It enables secure, decentralized team management and gameplay.',
     image: '',
@@ -72,7 +107,7 @@ const projects = [
     category: 'Full-Stack'
   },
   {
-    id: '7',
+    id: '1',
     title: 'MyBuddy',
     description: 'MyBuddy is an AI mental health chatbot that uses GPT-4 to simulate supportive, empathetic conversations in a private and friendly interface.',
     image: '/MyBuddyWebsite.png',
@@ -80,7 +115,7 @@ const projects = [
     githubUrl: 'https://github.com/jayptz/MyBuddy',
     liveUrl: '',
     slug: 'mybuddy',
-    category: 'AI'
+    category: ['Full-Stack', 'AI']
   }
 ]
 
@@ -91,7 +126,12 @@ export default function ProjectsPage() {
   
   const filteredProjects = selectedCategory === 'All' 
     ? projects 
-    : projects.filter(project => project.category === selectedCategory)
+    : projects.filter(project => {
+        if (Array.isArray(project.category)) {
+          return project.category.includes(selectedCategory)
+        }
+        return project.category === selectedCategory
+      })
 
   return (
     <main className="relative min-h-screen bg-black">
@@ -123,6 +163,9 @@ export default function ProjectsPage() {
           <h1 className="text-5xl font-bold text-white mb-4">
             panda builds
           </h1>
+          <h2 className="text-1xl font Bold text-gray-500 mb-4">
+            An insight to my work and innovation.
+          </h2>
           
           {/* Category Filter */}
           <div className="flex flex-wrap justify-center gap-2 mb-6">
