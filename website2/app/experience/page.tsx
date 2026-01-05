@@ -49,12 +49,40 @@ export default function ExperiencePage() {
         <div className="max-w-4xl mx-auto">
           <div className="space-y-12">
             {/* Project Leadership */}
-            <Link href="/projects/resdex" className="block">
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10 hover:bg-white/10 transition-colors duration-200 cursor-pointer group relative">
+
+            {/* RBC */}
+            <Link href="/rbc" className="block">
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10 hover:bg-white/10 transition-colors duration-200 group relative">
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h2 className="text-2xl font-bold text-white mb-2">Full-Stack Developer</h2>
-                    <p className="text-blue-400 font-semibold">ResDex Platform</p>
+                    <h2 className="text-2xl font-bold text-white mb-2">Software Developer</h2>
+                    <p className="text-blue-600 font-semibold">RBC</p>
+                    <p className="text-gray-400 text-sm">Jan 2026 - Present</p>
+                  </div>
+                  <Briefcase className="w-8 h-8 text-white" />
+                </div>
+                <p className="text-gray-300 leading-relaxed">
+                Contributing to full-stack development and API-driven features within RBC's Advice Centre platforms, working with senior engineers to build secure, scalable systems used across the bank.
+                </p>
+                {/* Arrow button - absolutely positioned at bottom-right */}
+                <div className="absolute bottom-4 right-4">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-lg hover:bg-white/10 text-white transition-colors duration-200 group-hover:scale-105">
+                    <ArrowRight className="w-5 h-5" />
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            <div className="flex justify-center">
+              <div className="w-0.5 h-16 bg-white rounded-full"></div>
+            </div>
+
+            <Link href="/projects/resdex" className="block">
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10 hover:bg-white/10 transition-colors duration-200 group relative">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h2 className="text-2xl font-bold text-white mb-2">Software Developer</h2>
+                    <p className="text-white font-semibold">ResDex</p>
                     <p className="text-gray-400 text-sm">Aug 2024 - Present</p>
                   </div>
                   <Briefcase className="w-8 h-8 text-white" />

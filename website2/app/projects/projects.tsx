@@ -7,6 +7,17 @@ import { useState } from 'react'
 const projects = [
   {
     id: '1',
+    title: 'GitWrapped',
+    description: 'GitWrapped is a webapp that allows GitUsers to view their stats.',
+    image: '',
+    imagePosition: '',
+    githubUrl: 'https://github.com/jayptz/githubrecap',
+    liveUrl: '',
+    slug: 'githubwrapped',
+    category: 'Full-Stack'
+  },
+  {
+    id: '2',
     title: 'OrbitShare',
     description: 'OrbitShare is a decentralized file sharing platform built on blockchain technology for secure, peer-to-peer file distribution.',
     image: '',
@@ -17,7 +28,7 @@ const projects = [
     category: 'Full-Stack'
   },
   {
-    id: '2',
+    id: '3',
     title: 'ResDex',
     description: 'A comprehensive mentorship and research platform that connects students with opportunities. Built with React, Node.js, and PostgreSQL.',
     image: '/resdex.jpeg',
@@ -28,7 +39,7 @@ const projects = [
     category: 'Research'
   },
   {
-    id: '3',
+    id: '4',
     title: 'GroundLink',
     description: 'GroundLink is a real-time dashboard for managing and tracking fieldwork through live maps and mobile task updates.',
     image: '',
@@ -39,7 +50,7 @@ const projects = [
     category: 'Full-Stack'
   },
   {
-    id: '4',
+    id: '5',
     title: 'ScoreWise',
     description: 'ScoreWise is a real-time NBA stats tracker that delivers personalized fantasy insights by SMS ',
     image: '',
@@ -50,7 +61,7 @@ const projects = [
     category: 'ML'
   },
   {
-    id: '5',
+    id: '6',
     title: 'G1 App',
     description: 'A mobile app that helps Ontario drivers study for the G1 test. Features flashcards, randomized quizzes, and a clean user-friendly interface.',
     image: '/G1.webp',
@@ -61,7 +72,7 @@ const projects = [
     category: 'Full-Stack'
   },
   {
-    id: '6',
+    id: '7',
     title: 'Near Fantasy',
     description: 'A blockchain-based fantasy app built on NEAR Protocol. It enables secure, decentralized team management and gameplay.',
     image: '',
@@ -72,7 +83,7 @@ const projects = [
     category: 'Full-Stack'
   },
   {
-    id: '7',
+    id: '8',
     title: 'MyBuddy',
     description: 'MyBuddy is an AI mental health chatbot that uses GPT-4 to simulate supportive, empathetic conversations in a private and friendly interface.',
     image: '/MyBuddyWebsite.png',

@@ -29,19 +29,21 @@ const socialLinks = [
 
 export default function SocialLinks() {
   return (
-    <div className="flex gap-4 justify-center py-4">
-      {socialLinks.map((social) => (
-        <a
-          key={social.name}
-          href={social.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`text-white ${social.color} transition-colors duration-200 text-xl`}
-          aria-label={social.name}
-        >
-          <i className={social.icon}></i>
-        </a>
-      ))}
+    <div className="flex flex-col items-center py-4 px-4">
+      <div className="flex gap-4 justify-center">
+        {socialLinks.map((social) => (
+          <a
+            key={social.name}
+            href={social.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`text-white ${social.color} transition-colors duration-200 text-xl`}
+            aria-label={social.name}
+          >
+            <i className={social.icon}></i>
+          </a>
+        ))}
+      </div>
     </div>
   )
 }
