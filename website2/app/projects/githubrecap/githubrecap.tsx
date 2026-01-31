@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ExternalLink, ArrowLeft, Github } from 'lucide-react'
+import { ArrowLeft, Github } from 'lucide-react'
 import { Metadata } from 'next'
 import G1TechStack from '../../components/GithubRecapTechStack'
 import Image from 'next/image'

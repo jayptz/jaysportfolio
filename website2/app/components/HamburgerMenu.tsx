@@ -2,7 +2,10 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence } from 'motion/react'
+// Type assertion needed due to React 19 + motion/react type compatibility issues
+const MotionSpan = motion.span as any
+const MotionDiv = motion.div as any
 import { Menu, X } from 'lucide-react'
 
 export default function HamburgerMenu() {
@@ -27,25 +30,27 @@ export default function HamburgerMenu() {
       >
         <AnimatePresence mode="wait">
           {isOpen ? (
-            <motion.div
+            <MotionSpan
               key="close"
               initial={{ rotate: -90, opacity: 0 }}
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: 90, opacity: 0 }}
               transition={{ duration: 0.2 }}
+              className="inline-block"
             >
               <X className="w-6 h-6 text-white" />
-            </motion.div>
+            </MotionSpan>
           ) : (
-            <motion.div
+            <MotionSpan
               key="menu"
               initial={{ rotate: 90, opacity: 0 }}
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: -90, opacity: 0 }}
               transition={{ duration: 0.2 }}
+              className="inline-block"
             >
               <Menu className="w-6 h-6 text-white" />
-            </motion.div>
+            </MotionSpan>
           )}
         </AnimatePresence>
       </button>
@@ -53,7 +58,7 @@ export default function HamburgerMenu() {
       {/* Dropdown Menu */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: -20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
@@ -62,7 +67,7 @@ export default function HamburgerMenu() {
           >
             <div className="py-2">
               {menuItems.map((item, index) => (
-                <motion.div
+                <MotionDiv
                   key={item.href}
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -75,10 +80,10 @@ export default function HamburgerMenu() {
                   >
                     {item.label}
                   </Link>
-                </motion.div>
+                </MotionDiv>
               ))}
             </div>
-          </motion.div>
+          </MotionDiv>
         )}
       </AnimatePresence>
 
