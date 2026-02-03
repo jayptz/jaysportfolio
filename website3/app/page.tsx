@@ -9,6 +9,7 @@ export default function Home() {
           <a href="#projects" className="hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors">Projects</a>
           <a href="#experience" className="hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors">Experience</a>
           <a href="#social" className="hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors">Social media</a>
+          <a href="/photos" className="hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors">Photos</a>
         </div>
       </nav>
 
