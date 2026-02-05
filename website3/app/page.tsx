@@ -6,6 +6,17 @@ import { motion } from 'motion/react'
 
 const PANDA_GIFS = ['/panda.gif', '/panda2.gif', '/panda3.gif', '/panda4.gif', '/panda5.gif']
 
+const PROJECTS = [
+  { id: '1', title: 'GitWrapped', description: 'GitWrapped is a webapp that allows GitUsers to view their stats.', category: 'Full-Stack', githubUrl: 'https://github.com/jayptz/githubrecap', liveUrl: '' },
+  { id: '2', title: 'OrbitShare', description: 'OrbitShare is a decentralized file sharing platform built on blockchain technology for secure, peer-to-peer file distribution.', category: 'Full-Stack', githubUrl: 'https://github.com/jayptz/OrbitShare', liveUrl: 'https://orbitshare.vercel.app/' },
+  { id: '3', title: 'ResDex', description: 'A comprehensive mentorship and research platform that connects students with opportunities. Built with React, Node.js, and PostgreSQL.', category: 'Research', githubUrl: 'https://github.com/devp19/ResDex', liveUrl: 'https://www.resdex.ca/' },
+  { id: '4', title: 'GroundLink', description: 'GroundLink is a real-time dashboard for managing and tracking fieldwork through live maps and mobile task updates.', category: 'Full-Stack', githubUrl: 'https://github.com/jayptz/GroundLink', liveUrl: '' },
+  { id: '5', title: 'ScoreWise', description: 'ScoreWise is a real-time NBA stats tracker that delivers personalized fantasy insights by SMS.', category: 'ML', githubUrl: 'https://github.com/jayptz/ScoreWise', liveUrl: '' },
+  { id: '6', title: 'G1 App', description: 'A mobile app that helps Ontario drivers study for the G1 test. Features flashcards, randomized quizzes, and a clean user-friendly interface.', category: 'Full-Stack', githubUrl: '', liveUrl: 'https://play.google.com/store/apps/details?id=com.smitpatel.g1app&pli=1' },
+  { id: '7', title: 'Near Fantasy', description: 'A blockchain-based fantasy app built on NEAR Protocol. It enables secure, decentralized team management and gameplay.', category: 'Full-Stack', githubUrl: 'https://github.com/jayptz/NEAR-Fantasy', liveUrl: '' },
+  { id: '8', title: 'MyBuddy', description: 'MyBuddy is an AI mental health chatbot that uses GPT-4 to simulate supportive, empathetic conversations in a private and friendly interface.', category: 'AI', githubUrl: 'https://github.com/jayptz/MyBuddy', liveUrl: '' },
+]
+
 function getRandomPanda() {
   return PANDA_GIFS[Math.floor(Math.random() * PANDA_GIFS.length)]
 }
@@ -95,14 +106,23 @@ export default function Home() {
         <section id="projects" className="scroll-mt-20">
           <h2 className="text-2xl font-semibold border-b border-lavender/30 pb-2">clicking buttons does things?</h2>
           <ul className="mt-4 space-y-4">
-            <li className="p-4 rounded-lg bg-card border border-border">
-              <h3 className="font-medium">Project one</h3>
-              <p className="text-sm text-muted-foreground mt-1">Brief description of your project.</p>
-            </li>
-            <li className="p-4 rounded-lg bg-card border border-border">
-              <h3 className="font-medium">Project two</h3>
-              <p className="text-sm text-muted-foreground mt-1">Brief description of your project.</p>
-            </li>
+            {PROJECTS.map((project) => (
+              <li key={project.id} className="p-4 rounded-lg bg-card border border-border">
+                <div className="flex flex-wrap items-center gap-2">
+                  <h3 className="font-medium">{project.title}</h3>
+                  <span className="text-xs px-2 py-0.5 rounded-full border border-border text-muted-foreground">{project.category}</span>
+                </div>
+                <p className="text-sm text-muted-foreground mt-1">{project.description}</p>
+                <div className="mt-2 flex flex-wrap gap-3 text-sm">
+                  {project.githubUrl && (
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="text-lavender hover:underline">GitHub</a>
+                  )}
+                  {project.liveUrl && (
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-lavender hover:underline">Live</a>
+                  )}
+                </div>
+              </li>
+            ))}
           </ul>
         </section>
 
