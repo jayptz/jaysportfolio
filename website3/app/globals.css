@@ -60,7 +60,7 @@ body {
   --radius: 0.625rem;
   --lavender: oklch(0.82 0.08 280);
   --lavender-muted: oklch(0.96 0.03 280);
-  --background: oklch(0.99 0.008 280);
+  --background: oklch(0.95 0.01 280);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -136,4 +136,9 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+::view-transition-old(root), ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
 }

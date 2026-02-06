@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { motion } from 'motion/react'
+import { AnimatedThemeToggler } from '@/components/ui/animated-theme-toggler'
 
 const PANDA_GIFS = ['/panda.gif', '/panda2.gif', '/panda3.gif', '/panda4.gif', '/panda5.gif']
 
@@ -34,6 +35,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground grid grid-cols-1 md:grid-cols-[1fr_min(100%,72rem)_1fr]">
+      {/* Theme toggler - fixed top right */}
+      <div className="fixed top-4 right-4 z-50 md:top-6 md:right-6">
+        <AnimatedThemeToggler className="flex size-10 items-center justify-center rounded-full border border-border bg-background/80 text-foreground shadow-sm backdrop-blur hover:bg-muted transition-colors" />
+      </div>
       {/* Left section - empty */}
       <div className="hidden md:block" />
       {/* Middle section - all content */}
@@ -82,6 +87,12 @@ export default function Home() {
                 i love solving problems since birth, whether i get to break things make things or learn things the feeling of me finding a solution is unbeatable.
                 obsessed with trying new things and finding solutions to problems.
               </p>
+              <div id="social" className="mt-6 flex flex-wrap gap-4 justify-end">
+                <a href="https://www.linkedin.com/in/jay-patel-wlu" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-lavender underline underline-offset-4 transition-colors">LinkedIn</a>
+                <a href="https://github.com/jayptz" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-lavender underline underline-offset-4 transition-colors">GitHub</a>
+                <a href="https://x.com/jayptz0" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-lavender underline underline-offset-4 transition-colors">Twitter / X</a>
+                <a href="/photos" className="text-muted-foreground hover:text-lavender underline underline-offset-4 transition-colors">Photos</a>
+              </div>
             </div>
           </div>
         </section>
@@ -91,13 +102,23 @@ export default function Home() {
         <section id="experience" className="scroll-mt-20">
           <h2 className="text-2xl font-semibold border-b border-lavender/30 pb-2">employment</h2>
           <ul className="mt-4 space-y-4">
-            <li className="p-4 rounded-lg bg-card border border-border">
-              <h3 className="font-medium">Software Developer @ RBC</h3>
-              <p className="text-sm text-muted-foreground mt-1">Jan 2026 - Present · Short description of what you did.</p>
+            <li className="p-4 flex gap-4 items-start">
+              <div className="size-14 shrink-0 rounded-lg overflow-hidden bg-muted">
+                <Image src="/rbc.png" alt="RBC" width={56} height={56} className="size-14 object-cover" />
+              </div>
+              <div className="min-w-0">
+                <h3 className="font-medium">Software Developer @ RBC</h3>
+                <p className="text-sm text-muted-foreground mt-1">Jan 2026 - Present · Short description of what you did.</p>
+              </div>
             </li>
-            <li className="p-4 rounded-lg bg-card border border-border">
-              <h3 className="font-medium">Software Developer @ ResDex</h3>
-              <p className="text-sm text-muted-foreground mt-1">Aug 2024 - Present · Short description of what you did.</p>
+            <li className="p-4 flex gap-4 items-start">
+              <div className="size-14 shrink-0 rounded-lg overflow-hidden bg-muted">
+                <Image src="/resdex.webp" alt="ResDex" width={56} height={56} className="size-14 object-cover" />
+              </div>
+              <div className="min-w-0">
+                <h3 className="font-medium">Software Developer @ ResDex</h3>
+                <p className="text-sm text-muted-foreground mt-1">Aug 2024 - Present · Short description of what you did.</p>
+              </div>
             </li>
           </ul>
         </section>
@@ -124,17 +145,6 @@ export default function Home() {
               </li>
             ))}
           </ul>
-        </section>
-
-        {/* Social media */}
-        <section id="social" className="scroll-mt-20 pb-16">
-          <h2 className="text-2xl font-semibold border-b border-lavender/30 pb-2">more</h2>
-          <div className="mt-4 flex flex-wrap gap-4">
-            <a href="https://www.linkedin.com/in/jay-patel-wlu" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-lavender underline underline-offset-4 transition-colors">LinkedIn</a>
-            <a href="https://github.com/jayptz" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-lavender underline underline-offset-4 transition-colors">GitHub</a>
-            <a href="https://x.com/jayptz0" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-lavender underline underline-offset-4 transition-colors">Twitter / X</a>
-            <a href="/photos" className="text-muted-foreground hover:text-lavender underline underline-offset-4 transition-colors">Photos</a>
-          </div>
         </section>
       </main>
       {/* Right section - empty */}
